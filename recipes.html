@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#F5EDE0" />
+<title>The community cookbook — Nona</title>
+<meta name="description" content="Every Sunday, somewhere in the world, a nonna is cooking. Browse the community cookbook." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍝</text></svg>" />
+</head>
+<body>
+
+<div class="loader" aria-hidden="true">
+  <div class="loader__ring"></div>
+  <div class="loader__word"><span>N</span><span>o</span><span>n</span><span>a</span></div>
+</div>
+
+<header class="nav" role="navigation">
+  <a href="index.html" class="nav__logo" aria-label="Nona — home">
+    <svg viewBox="0 0 140 40" class="nav__mark" aria-hidden="true">
+      <text x="0" y="30" class="nav__mark-text">Nona.</text>
+    </svg>
+  </a>
+  <nav class="nav__links">
+    <a href="index.html#story">Story</a>
+    <a href="index.html#mission">Mission</a>
+    <a href="index.html#how">How</a>
+    <a href="recipes.html">Recipes</a>
+    <a href="index.html#community">Community</a>
+    <a href="index.html#team">Team</a>
+  </nav>
+  <a href="index.html" class="nav__cta">← Back to company</a>
+</header>
+
+<section class="catalog-hero">
+  <h1>The community <em>cookbook.</em></h1>
+  <p>Every Sunday, somewhere in the world, a nonna is cooking. Browse 37,000+ recipes shared by grandchildren across 47 countries — click any card to cook it, save it, or ship the ingredients home.</p>
+  <div class="searchbar">
+    <input type="text" placeholder="Search a recipe, a nonna, a region…" />
+    <button type="button">Search</button>
+  </div>
+</section>
+
+<div class="filter-chips">
+  <button class="is-active" data-cat="all">All</button>
+  <button data-cat="primi">Primi</button>
+  <button data-cat="secondi">Secondi</button>
+  <button data-cat="contorni">Contorni</button>
+  <button data-cat="dolci">Dolci</button>
+  <button data-cat="pani">Pani &amp; Lievitati</button>
+  <button data-cat="street">Street food</button>
+</div>
+
+<section class="catalog">
+  <div class="recipes-grid">
+
+    <a class="recipe-card" data-category="primi" href="recipe.html?slug=cappelletti-romagnoli">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1587740908075-9e245070dfaa?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Primi</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Cappelletti romagnoli in brodo</h3>
+        <p class="recipe-card__by">Nonna Teresa · Forlì, Romagna</p>
+        <div class="recipe-card__meta"><span>🍷 412</span><span>😋 89</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="primi" href="recipe.html?slug=orecchiette-cime-di-rapa">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1621996346565-e3dbc6d23e71?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Primi</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Orecchiette con cime di rapa</h3>
+        <p class="recipe-card__by">Nonna Rosa · Bari, IT</p>
+        <div class="recipe-card__meta"><span>🍷 318</span><span>😋 54</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="primi" href="recipe.html?slug=risotto-milanese">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1625944525533-473d1a3b2034?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Primi</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Risotto alla milanese</h3>
+        <p class="recipe-card__by">Nonna Adelina · Milano, IT</p>
+        <div class="recipe-card__meta"><span>🍷 241</span><span>😋 67</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="secondi" href="recipe.html?slug=osso-buco-milanese">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Secondi</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Osso buco alla milanese</h3>
+        <p class="recipe-card__by">Nonna Luigia · Milano, IT</p>
+        <div class="recipe-card__meta"><span>🍷 267</span><span>😋 71</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="secondi" href="recipe.html?slug=pollo-cacciatora">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Secondi</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Pollo alla cacciatora</h3>
+        <p class="recipe-card__by">Nonna Carmela · Firenze, IT</p>
+        <div class="recipe-card__meta"><span>🍷 198</span><span>😋 44</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="secondi" href="recipe.html?slug=saltimbocca">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1625944022761-f2e7e3cb20b5?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Secondi</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Saltimbocca alla romana</h3>
+        <p class="recipe-card__by">Nonna Luisa · Roma, IT</p>
+        <div class="recipe-card__meta"><span>🍷 176</span><span>😋 38</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="contorni" href="recipe.html?slug=caponata">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Contorni</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Caponata</h3>
+        <p class="recipe-card__by">Nonna Concetta · Catania, IT</p>
+        <div class="recipe-card__meta"><span>🍷 221</span><span>😋 63</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="contorni" href="recipe.html?slug=peperonata">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1625938145744-e380515399b7?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Contorni</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Peperonata della domenica</h3>
+        <p class="recipe-card__by">Nonna Ida · Napoli, IT</p>
+        <div class="recipe-card__meta"><span>🍷 152</span><span>😋 31</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="dolci" href="recipe.html?slug=tiramisu">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Dolci</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Tiramisù (the real one)</h3>
+        <p class="recipe-card__by">Nonna Marilena · Treviso, IT</p>
+        <div class="recipe-card__meta"><span>🍷 904</span><span>😋 211</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="dolci" href="recipe.html?slug=cantucci">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1607920592519-bab2a80eb1a8?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Dolci</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Cantucci alle mandorle</h3>
+        <p class="recipe-card__by">Nonna Giulia · Siena, IT</p>
+        <div class="recipe-card__meta"><span>🍷 284</span><span>😋 76</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="dolci" href="recipe.html?slug=cassata">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1623334044303-241021148842?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Dolci</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Cassata siciliana</h3>
+        <p class="recipe-card__by">Nonna Agata · Palermo, IT</p>
+        <div class="recipe-card__meta"><span>🍷 412</span><span>😋 128</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="pani" href="recipe.html?slug=focaccia-di-recco">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1595854341625-f33ee10dbf94?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Pani</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Focaccia di Recco</h3>
+        <p class="recipe-card__by">Nonna Pinuccia · Genova, IT</p>
+        <div class="recipe-card__meta"><span>🍷 186</span><span>😋 42</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="pani" href="recipe.html?slug=piadina">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1628191080104-9e2ab1d5c4a9?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Pani</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Piadina romagnola</h3>
+        <p class="recipe-card__by">Nonna Mirella · Forlì, IT</p>
+        <div class="recipe-card__meta"><span>🍷 512</span><span>😋 103</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="pani" href="recipe.html?slug=taralli">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1600326145359-3a44909d1a39?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Pani</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Taralli pugliesi al finocchietto</h3>
+        <p class="recipe-card__by">Nonna Angela · Bari, IT</p>
+        <div class="recipe-card__meta"><span>🍷 198</span><span>😋 49</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="street" href="recipe.html?slug=arancini">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1625937286074-9ca519d5d9df?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Street food</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Arancini al ragù</h3>
+        <p class="recipe-card__by">Nonna Rosalia · Palermo, IT</p>
+        <div class="recipe-card__meta"><span>🍷 352</span><span>😋 98</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="street" href="recipe.html?slug=panzerotti">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1628191080104-9e2ab1d5c4a9?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Street food</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Panzerotti pugliesi</h3>
+        <p class="recipe-card__by">Nonna Marta · Bari, IT</p>
+        <div class="recipe-card__meta"><span>🍷 167</span><span>😋 35</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="primi" href="recipe.html?slug=pesto-genovese">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1611273426858-450d8e3c9fce?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Primi</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Trenette al pesto</h3>
+        <p class="recipe-card__by">Nonna Rita · Genova, IT</p>
+        <div class="recipe-card__meta"><span>🍷 387</span><span>😋 94</span></div>
+      </div>
+    </a>
+
+    <a class="recipe-card" data-category="secondi" href="recipe.html?slug=parmigiana">
+      <div class="recipe-card__media">
+        <img src="https://images.unsplash.com/photo-1572441713132-c542fc4fe282?w=900&q=85&auto=format&fit=crop" alt="" loading="lazy" />
+        <span class="recipe-card__badge">Secondi</span>
+      </div>
+      <div class="recipe-card__body">
+        <h3>Parmigiana di melanzane</h3>
+        <p class="recipe-card__by">Nonna Assunta · Napoli, IT</p>
+        <div class="recipe-card__meta"><span>🍷 623</span><span>😋 142</span></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="foot__grid">
+    <div>
+      <h4 class="foot__mark">Nona.</h4>
+      <p>Via San Vitale 47<br/>40125 Bologna, Italy</p>
+      <p>hello@nona.kitchen<br/>+39 051 000 000</p>
+    </div>
+    <div>
+      <span class="foot__label">Company profile by</span>
+      <p><strong>[Your group name here]</strong><br/>English Course · Group project · A.Y. 2025/26</p>
+    </div>
+    <div>
+      <span class="foot__label">Reading list</span>
+      <p>Starbucks · Tesla · Bloomberg · Patagonia · Airbnb</p>
+    </div>
+  </div>
+  <div class="foot__bottom">
+    <span>© 2026 Nona S.r.l. — Fictional example for classroom use.</span>
+    <span>Designed to make you feel at home.</span>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+<script src="script.js" defer></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Nonna — scrollytelling interactions
+   Nona — scrollytelling interactions
    GSAP + ScrollTrigger + Lenis (all via CDN)
    ========================================================================== */
 
@@ -149,7 +149,7 @@
 
     /* --- Generic scroll reveals (sections / cards) --- */
     if (!prefersReduced) {
-      gsap.utils.toArray('.section-head, .story__grid, .step, .stat, .member, .rule, .timeline li, .trust__logos span, .pull-quote, .cta__title, .cta__sub, .cta__button, .whynow__text > *').forEach((el) => {
+      gsap.utils.toArray('.section-head, .story__grid, .step, .stat, .member, .rule, .trust__logos span, .pull-quote, .cta__title, .cta__sub, .cta__button, .whynow__text > *, .recipe-card, .community__block, .chart').forEach((el) => {
         gsap.from(el, {
           opacity: 0,
           y: 28,
@@ -159,6 +159,50 @@
         });
       });
     }
+
+    /* --- Donut chart animate segments --- */
+    gsap.utils.toArray('.chart--donut').forEach((chart) => {
+      const segs = chart.querySelectorAll('.chart__seg');
+      segs.forEach((seg) => {
+        const dash = seg.getAttribute('stroke-dasharray') || '';
+        const [len] = dash.split(' ');
+        seg.style.strokeDasharray = '0 9999';
+        ScrollTrigger.create({
+          trigger: chart, start: 'top 80%', once: true,
+          onEnter: () => {
+            seg.style.strokeDasharray = dash;
+            seg.setAttribute('stroke-dasharray', dash);
+          },
+        });
+      });
+    });
+
+    /* --- Bar chart reveal --- */
+    gsap.utils.toArray('.chart--bars .bars').forEach((bars) => {
+      ScrollTrigger.create({
+        trigger: bars, start: 'top 80%', once: true,
+        onEnter: () => bars.classList.add('is-revealed'),
+      });
+    });
+
+    /* --- Timeline reveal (progress track grows from left/top) --- */
+    gsap.utils.toArray('.timeline').forEach((tl) => {
+      ScrollTrigger.create({
+        trigger: tl, start: 'top 78%', once: true,
+        onEnter: () => tl.classList.add('is-revealed'),
+      });
+      if (!prefersReduced) {
+        const items = tl.querySelectorAll('.tl-item');
+        gsap.from(items, {
+          opacity: 0,
+          y: 16,
+          duration: 0.8,
+          stagger: 0.12,
+          ease: 'expo.out',
+          scrollTrigger: { trigger: tl, start: 'top 78%', once: true },
+        });
+      }
+    });
 
     /* --- Image reveal (clip mask) --- */
     if (!prefersReduced) {
@@ -170,6 +214,90 @@
           ease: 'expo.out',
           scrollTrigger: { trigger: img, start: 'top 85%' },
         });
+      });
+    }
+
+    /* --- Recipes catalog — filter chips --- */
+    const chips = document.querySelectorAll('.filter-chips button');
+    if (chips.length) {
+      chips.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          chips.forEach((b) => b.classList.remove('is-active'));
+          btn.classList.add('is-active');
+          const cat = btn.dataset.cat;
+          document.querySelectorAll('.catalog .recipe-card').forEach((card) => {
+            const match = cat === 'all' || card.dataset.category === cat;
+            card.classList.toggle('is-hidden', !match);
+          });
+        });
+      });
+    }
+
+    /* --- Recipe detail — pull ?slug & patch title --- */
+    const rdTitle = document.querySelector('.rd__title-name');
+    if (rdTitle) {
+      const params = new URLSearchParams(window.location.search);
+      const slug = params.get('slug');
+      const map = {
+        'cappelletti-romagnoli': { name: 'Cappelletti romagnoli in brodo', by: 'Nonna Teresa · Forlì, Romagna' },
+        'tortellini-in-brodo': { name: 'Tortellini in brodo', by: 'Nonna Teresa · Bologna, IT' },
+        'orecchiette-cime-di-rapa': { name: 'Orecchiette con cime di rapa', by: 'Nonna Rosa · Bari, IT' },
+        'osso-buco-milanese': { name: 'Osso buco alla milanese', by: 'Nonna Luigia · Milano, IT' },
+        'tiramisu': { name: 'Tiramisù', by: 'Nonna Marilena · Treviso, IT' },
+        'focaccia-di-recco': { name: 'Focaccia di Recco', by: 'Nonna Pinuccia · Genova, IT' },
+        'arancini': { name: 'Arancini al ragù', by: 'Nonna Rosalia · Palermo, IT' },
+        'piadina': { name: 'Piadina romagnola', by: 'Nonna Mirella · Forlì, IT' },
+      };
+      const rec = map[slug];
+      if (rec) {
+        rdTitle.textContent = rec.name;
+        const byEl = document.querySelector('.rd__by');
+        if (byEl) byEl.textContent = rec.by;
+        document.title = rec.name + ' — Nona';
+      }
+    }
+
+    /* --- Recipe detail — thumbnails switcher (supports <img> and <video poster>) --- */
+    document.querySelectorAll('.rd__thumbs img').forEach((th) => {
+      th.addEventListener('click', () => {
+        const mainImg = document.querySelector('.rd__media img');
+        const mainVideo = document.querySelector('.rd__media video');
+        document.querySelectorAll('.rd__thumbs img').forEach((t) => t.classList.remove('is-active'));
+        th.classList.add('is-active');
+        if (mainImg) mainImg.src = th.src;
+        if (mainVideo) mainVideo.setAttribute('poster', th.src);
+      });
+    });
+
+    /* --- Recipe detail — reactions (persisted localStorage) --- */
+    const reactions = document.querySelectorAll('.rd__reactions button');
+    const slug = (new URLSearchParams(window.location.search)).get('slug') || 'default';
+    reactions.forEach((btn) => {
+      const key = `nonna:rx:${slug}:${btn.dataset.rx}`;
+      const stored = parseInt(localStorage.getItem(key) || '0', 10);
+      const cnt = btn.querySelector('.cnt');
+      const base = parseInt(btn.dataset.base || '0', 10);
+      if (cnt) cnt.textContent = base + stored;
+      if (stored > 0) btn.classList.add('is-active');
+      btn.addEventListener('click', () => {
+        const active = btn.classList.toggle('is-active');
+        const delta = active ? 1 : -1;
+        const now = Math.max(0, parseInt(localStorage.getItem(key) || '0', 10) + delta);
+        localStorage.setItem(key, String(now));
+        if (cnt) cnt.textContent = base + now;
+      });
+    });
+
+    /* --- Recipe detail — Add to my table --- */
+    const basketBtn = document.querySelector('.basket-cta button');
+    if (basketBtn) {
+      basketBtn.addEventListener('click', () => {
+        basketBtn.classList.add('is-added');
+        basketBtn.textContent = '✓ Added to your table';
+        setTimeout(() => {
+          basketBtn.classList.remove('is-added');
+          basketBtn.textContent = 'Add to my table';
+        }, 2400);
       });
     }
 
