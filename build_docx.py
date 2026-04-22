@@ -683,9 +683,10 @@ LABEL("Serves", "6")
 LABEL("Difficulty", "Medium")
 
 H2("Media")
-NOTE("Nella pagina c'è un vero <video> HTML5 con poster (immagine di anteprima) "
-     "e controlli nativi. Il video placeholder arriva da Pixabay. "
-     "Sotto: 4 thumbnail cliccabili che aggiornano il poster.")
+NOTE("Nella pagina c'è un'immagine full-width con un play button decorativo "
+     "sovrapposto (mockup). Sotto: 4 thumbnail cliccabili che cambiano l'immagine "
+     "principale. Quando avremo i video reali delle ricette, basterà sostituire "
+     "l'<img> con un <video> HTML5 e il player prenderà il controllo.")
 H3("[recipe / thumb 1 alt]"); P("Cappelletti in brodo plated", italic=True)
 H3("[recipe / thumb 2 alt]"); P("Fresh pasta dough being rolled", italic=True)
 H3("[recipe / thumb 3 alt]"); P("Flour, rolling pin and recipe notebook", italic=True)
