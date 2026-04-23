@@ -1,0 +1,23 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor
+*.swp
+*~
+.vscode/
+.idea/
+
+# Node (se usato in futuro)
+node_modules/
+npm-debug.log*
+
+# Build artifacts
+dist/
+build/
+.cache/
+
+# Env (anche se ora non ce ne sono, prevenzione)
+.env
+.env.local
+*.key
