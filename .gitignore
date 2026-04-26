@@ -24,3 +24,6 @@ build/
 
 # nanobanana auto-generated thumbnails (the .jpg full-res files are the assets)
 **/*_thumb.jpeg
+
+# Claude Code project-local settings (per-user, not part of the project)
+.claude/

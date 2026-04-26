@@ -148,25 +148,47 @@ def build():
 
     # ---------- 1 · Hook ----------
     story.extend(section(
-        "1", "Hook — the kitchen", "≈ 25 sec",
+        "1", "Hook — Sunday at nonna's", "≈ 55 sec",
         [
             cue("SLIDE", 'Hero. Headline visible: <i>"Preserve tradition, '
                 'one recipe at a time."</i>'),
-            script("Close your eyes. — Just for one second. — "
+            script("Close your eyes. — Just for a moment. "
                    "<b>[PAUSE 2 sec]</b>"),
-            script("You are in a kitchen. It is not your kitchen. "
-                   "It smells like Sunday."),
-            script("Flour on a wooden table. A woman in a cream apron. "
-                   "She is making pasta with her hands."),
-            script("She is telling you a story. You will not remember "
-                   "all of it. And the place she is talking about — "
-                   "you have never been there."),
-            script("That woman is <i>somebody's</i> grandmother. "
-                   "<b>[PAUSE]</b>"),
-            script("And the day her hands stop — that recipe is gone. "
-                   "<b>Forever.</b>"),
-            cue("VOICE", "Last line: drop the volume 20%. Hold the silence "
-                "for 2 seconds. Do <b>not</b> smile yet."),
+            script("It is a Sunday. — You are eight years old. — "
+                   "Maybe ten. It doesn't matter."),
+            script("You are walking into your grandmother's kitchen."),
+            script("The smell hits you first. — <i>Tomato sauce.</i> "
+                   "On the stove since morning. — Bread, just out of the "
+                   "oven. — <i>Roasted meat.</i> — Something sweet, "
+                   "somewhere."),
+            script("Your nonna turns around. — Flour on her hands. — "
+                   "A little smile, just for you."),
+            script("The table is set for too many people, on purpose. — "
+                   "Everybody is talking — at the same time. Glasses "
+                   "clink. Somebody is laughing too loud."),
+            script("Then the food arrives. — And the room goes quiet. — "
+                   "For one second. — Just one. <b>[PAUSE 2 sec]</b>"),
+            scriptQuiet("<i>That second — was the magic.</i>"),
+            script("Because nobody had to teach you what love tasted "
+                   "like. — <b>You already knew.</b> <b>[PAUSE 2 sec]</b>"),
+            script("Open your eyes."),
+            script("Some of you just remembered a kitchen. — Some of you "
+                   "remembered a face. — Some of you remembered — that "
+                   "you haven't been there in a very long time."),
+            script("That magic — those flavours, those Sundays, the "
+                   "people we loved — <b>should not be allowed to "
+                   "disappear.</b> <b>[PAUSE]</b>"),
+            script("We built <b>Nona</b> — to make sure they don't."),
+            cue("VOICE", "First half (eyes closed): slow, low volume, "
+                "almost a whisper. Let people picture it."),
+            cue("VOICE", '<i>"That second — was the magic"</i> — drop '
+                "another 20%. Hold the silence."),
+            cue("BODY", "Eyes closed: stand still. Don't gesture. "
+                "<i>Open your eyes</i> — open yours too, slowly, and "
+                "find three faces in the room."),
+            cue("BODY", 'On <i>"We built Nona — to make sure they '
+                "don't.\"</i> — plant feet. Quiet conviction, not "
+                "selling."),
         ],
     ))
 
@@ -192,44 +214,53 @@ def build():
 
     # ---------- 3 · The story ----------
     story.extend(section(
-        "3", "The story — how we started", "≈ 65 sec",
+        "3", "The story — how we started", "≈ 60 sec",
         [
             cue("SLIDE", "Scroll to <i>01 &middot; Our Story</i>."),
-            script("It started on a Sunday morning in Bologna. "
-                   "<b>February 2024.</b> <b>[PAUSE]</b>"),
-            script("Five friends. One long wooden table. And an old "
-                   "recipe notebook."),
-            script("Yellow pages. Tomato stains on the cover. Handwriting "
-                   "that went up and down the page. We had taken the "
-                   "notebook from a grandmother's kitchen drawer, in "
-                   "Romagna."),
-            script("We cooked from it together. <i>Cappelletti in brodo.</i>"),
-            scriptQuiet("<i>Nobody went home on time.</i> "
-                        "<b>[PAUSE 2 sec]</b>"),
-            script("Around that table, we were five: "
-                   "<b>Vittoria. Chiara. Alessia. The other Nicola. "
-                   "— And me.</b>"),
-            script("Five very different lives. And each of us — brought "
-                   "a different grandmother to that table."),
-            script("<i>Nonna Teresa</i> — Romagna. &nbsp; "
-                   "<i>Nonna Giuseppina</i> — Le Marche. &nbsp; "
-                   "<i>Nonna Amalia</i> — Piemonte. &nbsp; "
-                   "<i>Nonna Luisa</i> — Lazio. &nbsp; "
-                   "<i>Nonna Angela</i> — Puglia."),
-            script("Five different kitchens. The same feeling in all of "
-                   "them — <i>we were home.</i> <b>[PAUSE 2 sec]</b>"),
-            script("By the end of that lunch, we were not five friends "
-                   "anymore. We were five co-founders."),
-            script("<b>Nona was born that evening. February 17, 2024. "
-                   "On that same long wooden table.</b>"),
+            script("<b>December 26, 2022.</b> — The day after Christmas. "
+                   "<b>[PAUSE]</b>"),
+            script("Five friends — me, <b>Vittoria, Chiara, Alessia, "
+                   "the other Nicola</b> — meeting up in Bologna. — "
+                   "A small place. A bottle of wine. — Hugs. — "
+                   "<i>&ldquo;How was Christmas?&rdquo;</i>"),
+            script("And we started telling stories."),
+            script("Vittoria — her nonna in <b>Le Marche</b>. "
+                   "<i>Vincisgrassi</i> for twenty people."),
+            script("Chiara — her nonna in <b>Piemonte</b>. "
+                   "<i>Agnolotti del plin</i>, all by hand."),
+            script("Alessia — <b>Puglia</b>. <i>Orecchiette</i> and "
+                   "<i>focaccia</i> at sunrise."),
+            script("The other Nicola — <b>Lazio</b>. <i>Cacio e pepe</i> "
+                   "at midnight."),
+            script("And me — <b>Nonna Teresa, Romagna</b>. "
+                   "<i>Cappelletti in brodo</i>. — Christmas Eve, "
+                   "until two in the morning."),
+            script("Five very different lives. — Five very different "
+                   "kitchens. — But every story ended the same way."),
+            scriptQuiet("&ldquo;<i>It was magic. — And one day, "
+                        "it will be over.</i>&rdquo;"),
+            script("Somebody — I don't even remember who — said it "
+                   "out loud:"),
+            scriptQuiet("&ldquo;<i>What if we could keep it. — Forever. "
+                        "— For everybody.</i>&rdquo;"),
+            script("<b>[PAUSE 2 sec]</b>"),
+            script("That night, we were not five friends anymore. — "
+                   "We were five co-founders."),
+            script("<b>Nona was born that evening. December 26, 2022. — "
+                   "Born from five Christmas lunches. — And one shared "
+                   "idea: that magic should not have to end.</b>"),
             cue("VOICE", "Slow the five grandmothers way down. One beat "
-                "between each name. These are the sticky names."),
+                "between each region. These are the sticky names."),
+            cue("VOICE", '<i>&ldquo;It was magic. And one day, it will '
+                "be over.\"</i> — almost a whisper, slow."),
+            cue("VOICE", '<i>&ldquo;Forever. For everybody.\"</i> — '
+                "punch each word, slow beat between."),
             cue("BODY", 'On <i>"the other Nicola"</i> — small, warm '
                 "smile. (Inside joke. If Nicola Giovannelli is not in "
                 "the room, <b>cut the line.</b>)"),
-            cue("BODY", 'On <i>"Nona was born that evening"</i> — plant '
-                "feet. Stop moving. Don't gesture. The stillness does "
-                "the work."),
+            cue("BODY", 'On <i>"Nona was born that evening"</i> — '
+                "plant feet. Stop moving. Don't gesture. The stillness "
+                "does the work."),
         ],
     ))
 
@@ -402,7 +433,7 @@ def build():
     story.append(hr(color=MUTED, thickness=0.4))
     story.append(Paragraph(
         "Nona S.r.l. &middot; Opening pitch (B2/C1 version) &middot; "
-        "Nick Giunchi &middot; rev. 2026-04-24",
+        "Nick Giunchi &middot; rev. 2026-04-26",
         styles["footer"],
     ))
 
