@@ -21,3 +21,6 @@ build/
 .env
 .env.local
 *.key
+
+# nanobanana auto-generated thumbnails (the .jpg full-res files are the assets)
+**/*_thumb.jpeg
