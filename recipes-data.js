@@ -275,7 +275,9 @@ window.recipesData = {
     badge: "Dolci",
     hero: { src: "images/recipes/tiramisu.jpg", alt: "A spoonful of tiramisù lifted from a glass dish" },
     extraThumbs: [
-      { src: "images/recipes/tiramisu-step-1.jpg", alt: "Egg yolks whipped with sugar in a glass bowl, Treviso kitchen" }
+      { src: "images/recipes/tiramisu-step-1.jpg", alt: "Egg yolks whipped with sugar in a glass bowl, Treviso kitchen" },
+      { src: "images/recipes/tiramisu-step-2.jpg", alt: "A savoiardo dipped in cold espresso before layering into the dish" },
+      { src: "images/recipes/tiramisu-step-3.jpg", alt: "Finished tiramisù dusted with bitter cocoa powder" }
     ],
     meta: { time: "30m + 4h chill", servings: "6", difficulty: "Easy" },
     storyHtml: "&ldquo;Marilena was born in Treviso in 1948. The tiramisù was invented there, at <em>Le Beccherie</em>, the year she turned thirty. Her version is the original: no cream, no liqueur, no cocoa in the cream &mdash; only mascarpone, eggs, sugar, espresso, savoiardi, and a thin black sky of cocoa on top. <em>&ldquo;Tirami su&rdquo;</em> &mdash; pick me up. It does, every time.&rdquo;<br/><br/>&mdash; <em>Anna, her granddaughter</em>",
@@ -370,7 +372,9 @@ window.recipesData = {
     badge: "Pani",
     hero: { src: "images/recipes/focaccia-di-recco.jpg", alt: "Focaccia di Recco with melted stracchino cheese" },
     extraThumbs: [
-      { src: "images/recipes/focaccia-di-recco-step-1.jpg", alt: "Nonna Pinuccia stretching the paper-thin dough above the marble counter" }
+      { src: "images/recipes/focaccia-di-recco-step-1.jpg", alt: "Nonna Pinuccia stretching the paper-thin dough above the marble counter" },
+      { src: "images/recipes/focaccia-di-recco-step-2.jpg", alt: "Tufts of stracchino distributed on the bottom layer of dough" },
+      { src: "images/recipes/focaccia-di-recco-step-3.jpg", alt: "Focaccia di Recco fresh from the oven, melted stracchino oozing through" }
     ],
     meta: { time: "1h 30m", servings: "4", difficulty: "Medium" },
     storyHtml: "&ldquo;Pinuccia was born in Recco, twenty kilometres from Genova, where the focaccia is something else entirely &mdash; no yeast, two paper-thin layers of dough, stracchino in the middle, twenty seconds in a furnace. She taught me to stretch the dough in the air, like a pizzaiolo from Naples turned sailor. The cheese must <em>weep</em> through the cracks, never run.&rdquo;<br/><br/>&mdash; <em>Edoardo, her grandson</em>",
@@ -459,7 +463,9 @@ window.recipesData = {
     badge: "Street food",
     hero: { src: "images/recipes/arancini.jpg", alt: "Sicilian arancini with ragù filling, golden crust" },
     extraThumbs: [
-      { src: "images/recipes/arancini-step-1.jpg", alt: "Saffron risotto rice spread on a tray, with ragù and caciocavallo nearby" }
+      { src: "images/recipes/arancini-step-1.jpg", alt: "Saffron risotto rice spread on a tray, with ragù and caciocavallo nearby" },
+      { src: "images/recipes/arancini-step-2.jpg", alt: "Nonna Rosalia shaping an arancino with ragù and caciocavallo in the centre" },
+      { src: "images/recipes/arancini-step-3.jpg", alt: "Golden fried Sicilian arancini, one broken open showing the molten cheese" }
     ],
     meta: { time: "3h 30m", servings: "10 pieces", difficulty: "Hard" },
     storyHtml: "&ldquo;In Palermo, Rosalia disagrees with Catania about the gender (<em>arancinA</em>, she insists, feminine, like a small orange) and about the shape (round, not pointed). The rice is cooked in saffron broth like a risotto, then stuffed with a long ragù made the day before. The breadcrumbs are home-toasted. They are the breakfast of every market porter in the Vucciria.&rdquo;<br/><br/>&mdash; <em>Andrea, her grandson</em>",
@@ -560,6 +566,11 @@ window.recipesData = {
     category: "secondi",
     badge: "Secondi",
     hero: { src: "images/recipes/parmigiana.jpg", alt: "Aubergine parmigiana, golden top, melted mozzarella" },
+    extraThumbs: [
+      { src: "images/recipes/parmigiana-step-1.jpg", alt: "Layered eggplant casserole being assembled with tomato, mozzarella and basil" },
+      { src: "images/recipes/parmigiana-step-2.jpg", alt: "Top-down view of the parmigiana layered with a generous Parmigiano crust" },
+      { src: "images/recipes/parmigiana-step-3.jpg", alt: "Finished parmigiana from the oven, golden bubbling crust, fresh basil" }
+    ],
     meta: { time: "2h", servings: "6", difficulty: "Medium" },
     storyHtml: "&ldquo;Assunta makes the parmigiana the day before. <em>Sempre</em>. It needs to settle, like a story you tell twice. Aubergines fried, never grilled (Napoli, not Sicilia). The tomato is San Marzano, simmered slowly with basil, no onion, no garlic. The mozzarella is fior di latte, drained, never buffalo &mdash; too wet. Layered low, baked golden, eaten cold the next day, in the garden with a glass of Greco di Tufo.&rdquo;<br/><br/>&mdash; <em>Sara, her granddaughter</em>",
     basket: { title: "Nonna Assunta's Napoli basket", price: "€32", when: "Order by Thursday · arrives Saturday morning" },
