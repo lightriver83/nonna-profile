@@ -148,24 +148,41 @@ def build():
 
     # ---------- 1 · Hook ----------
     story.extend(section(
-        "1", "Hook — Sunday at nonna's", "≈ 55 sec",
+        "1", "Hook — A kitchen you remember", "≈ 85 sec",
         [
             cue("SLIDE", 'Hero. Headline visible: <i>"Preserve tradition, '
                 'one recipe at a time."</i>'),
             script("Close your eyes. — Just for a moment. "
                    "<b>[PAUSE 2 sec]</b>"),
             script("It is a Sunday. — You are eight years old. — "
-                   "Maybe ten. It doesn't matter."),
-            script("You are walking into your grandmother's kitchen."),
-            script("The smell hits you first. — <i>Tomato sauce.</i> "
-                   "On the stove since morning. — Bread, just out of the "
-                   "oven. — <i>Roasted meat.</i> — Something sweet, "
-                   "somewhere."),
-            script("Your nonna turns around. — Flour on her hands. — "
-                   "A little smile, just for you."),
+                   "Maybe ten. — It doesn't matter how old, exactly. — "
+                   "You will remember the rest forever, but not the year."),
+            script("You are walking towards a kitchen. — A door that "
+                   "doesn't need a key. — You don't even knock. — You "
+                   "just push it open, and you are inside."),
+            scriptQuiet("<i>The first thing is the warmth.</i> — It "
+                        "comes out before you do. — A kitchen that has "
+                        "been awake since dawn."),
+            script("Then the air. — Slow steam from a pot. — Something "
+                   "baking, almost ready. — Onions softened in butter, "
+                   "hours ago. — Coffee left from breakfast, on a stove "
+                   "that never really cools down. — A sweet note in the "
+                   "corner — you can't tell what."),
+            script("You hear the kitchen before you see it. — The "
+                   "radio, low. — A wooden spoon tapping the side of a "
+                   "pan. — Two voices in another room — laughing about "
+                   "something nobody will remember by Tuesday. — A dog "
+                   "asleep, somewhere."),
+            script("The light is the colour of late morning. — Yellow "
+                   "on the curtain. — A square of sun on the floor "
+                   "tiles. — Dust floating inside it, slow."),
+            script("Your grandmother turns around. — Flour on her "
+                   "hands. — A small smile, just for you. — She "
+                   "doesn't say much. — <i>She doesn't have to.</i>"),
             script("The table is set for too many people, on purpose. — "
-                   "Everybody is talking — at the same time. Glasses "
-                   "clink. Somebody is laughing too loud."),
+                   "A chair that wasn't there last week. — A glass with "
+                   "no owner yet. — A napkin folded slightly wrong, by "
+                   "a younger cousin who is trying."),
             script("Then the food arrives. — And the room goes quiet. — "
                    "For one second. — Just one. <b>[PAUSE 2 sec]</b>"),
             scriptQuiet("<i>That second — was the magic.</i>"),
@@ -174,18 +191,25 @@ def build():
             script("Open your eyes."),
             script("Some of you just remembered a kitchen. — Some of you "
                    "remembered a face. — Some of you remembered — that "
-                   "you haven't been there in a very long time."),
+                   "you haven't been there in a long time. — "
+                   "<i>Some of you remembered — that the kitchen is "
+                   "empty now.</i> — That the chair you used to sit on "
+                   "is somebody else's chair."),
             script("That magic — those flavours, those Sundays, the "
                    "people we loved — <b>should not be allowed to "
                    "disappear.</b> <b>[PAUSE]</b>"),
             script("We built <b>Nona</b> — to make sure they don't."),
             cue("VOICE", "First half (eyes closed): slow, low volume, "
-                "almost a whisper. Let people picture it."),
+                "almost a whisper. The senses sections (warmth, air, "
+                "sound, light) — drop another notch, hypnotic pace."),
             cue("VOICE", '<i>"That second — was the magic"</i> — drop '
                 "another 20%. Hold the silence."),
             cue("BODY", "Eyes closed: stand still. Don't gesture. "
                 "<i>Open your eyes</i> — open yours too, slowly, and "
                 "find three faces in the room."),
+            cue("BODY", '<i>"Your grandmother turns around"</i> — small '
+                "open-palm gesture at chest height, like greeting "
+                "someone at the end of a hallway."),
             cue("BODY", 'On <i>"We built Nona — to make sure they '
                 "don't.\"</i> — plant feet. Quiet conviction, not "
                 "selling."),
