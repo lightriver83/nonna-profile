@@ -274,6 +274,9 @@ window.recipesData = {
     category: "dolci",
     badge: "Dolci",
     hero: { src: "images/recipes/tiramisu.jpg", alt: "A spoonful of tiramisù lifted from a glass dish" },
+    extraThumbs: [
+      { src: "images/recipes/tiramisu-step-1.jpg", alt: "Egg yolks whipped with sugar in a glass bowl, Treviso kitchen" }
+    ],
     meta: { time: "30m + 4h chill", servings: "6", difficulty: "Easy" },
     storyHtml: "&ldquo;Marilena was born in Treviso in 1948. The tiramisù was invented there, at <em>Le Beccherie</em>, the year she turned thirty. Her version is the original: no cream, no liqueur, no cocoa in the cream &mdash; only mascarpone, eggs, sugar, espresso, savoiardi, and a thin black sky of cocoa on top. <em>&ldquo;Tirami su&rdquo;</em> &mdash; pick me up. It does, every time.&rdquo;<br/><br/>&mdash; <em>Anna, her granddaughter</em>",
     basket: { title: "Nonna Marilena's Treviso basket", price: "€26", when: "Order by Thursday · arrives Saturday morning" },
@@ -366,6 +369,9 @@ window.recipesData = {
     category: "pani",
     badge: "Pani",
     hero: { src: "images/recipes/focaccia-di-recco.jpg", alt: "Focaccia di Recco with melted stracchino cheese" },
+    extraThumbs: [
+      { src: "images/recipes/focaccia-di-recco-step-1.jpg", alt: "Nonna Pinuccia stretching the paper-thin dough above the marble counter" }
+    ],
     meta: { time: "1h 30m", servings: "4", difficulty: "Medium" },
     storyHtml: "&ldquo;Pinuccia was born in Recco, twenty kilometres from Genova, where the focaccia is something else entirely &mdash; no yeast, two paper-thin layers of dough, stracchino in the middle, twenty seconds in a furnace. She taught me to stretch the dough in the air, like a pizzaiolo from Naples turned sailor. The cheese must <em>weep</em> through the cracks, never run.&rdquo;<br/><br/>&mdash; <em>Edoardo, her grandson</em>",
     basket: { title: "Nonna Pinuccia's Liguria basket", price: "€30", when: "Order by Thursday · arrives Saturday morning" },
@@ -452,6 +458,9 @@ window.recipesData = {
     category: "street",
     badge: "Street food",
     hero: { src: "images/recipes/arancini.jpg", alt: "Sicilian arancini with ragù filling, golden crust" },
+    extraThumbs: [
+      { src: "images/recipes/arancini-step-1.jpg", alt: "Saffron risotto rice spread on a tray, with ragù and caciocavallo nearby" }
+    ],
     meta: { time: "3h 30m", servings: "10 pieces", difficulty: "Hard" },
     storyHtml: "&ldquo;In Palermo, Rosalia disagrees with Catania about the gender (<em>arancinA</em>, she insists, feminine, like a small orange) and about the shape (round, not pointed). The rice is cooked in saffron broth like a risotto, then stuffed with a long ragù made the day before. The breadcrumbs are home-toasted. They are the breakfast of every market porter in the Vucciria.&rdquo;<br/><br/>&mdash; <em>Andrea, her grandson</em>",
     basket: { title: "Nonna Rosalia's Palermo basket", price: "€36", when: "Order by Thursday · arrives Saturday morning" },

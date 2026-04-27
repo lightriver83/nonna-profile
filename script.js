@@ -281,9 +281,9 @@
             { src: 'https://images.unsplash.com/photo-1516684669134-de6f7c473a2a?w=400&q=85&auto=format&fit=crop', alt: 'Hands working fresh dough on a wooden board' },
             { src: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&q=85&auto=format&fit=crop', alt: 'A steaming pot on a home stove' }
           ];
-          const extras = (Array.isArray(recipe.extraThumbs) && recipe.extraThumbs.length > 0)
-            ? recipe.extraThumbs
-            : fallbackThumbs;
+          // Use recipe-specific extras first; pad with generic kitchen fallbacks if fewer than 3.
+          const customExtras = Array.isArray(recipe.extraThumbs) ? recipe.extraThumbs : [];
+          const extras = customExtras.concat(fallbackThumbs).slice(0, 3);
           const allThumbs = [{ src: recipe.hero.src, alt: recipe.hero.alt || recipe.title, active: true }, ...extras];
           elThumbs.innerHTML = allThumbs.map(t =>
             `<img${t.active ? ' class="is-active"' : ''} src="${t.src}" alt="${t.alt}" />`
@@ -424,6 +424,29 @@
           basketBtn.classList.remove('is-added');
           basketBtn.textContent = 'Add to my table';
         }, 2400);
+      });
+    }
+
+    /* --- Recipe detail — Play button (video coming soon) --- */
+    const playBtn = document.querySelector('.rd__media .play');
+    if (playBtn) {
+      const showToast = (message) => {
+        let toast = document.querySelector('.toast');
+        if (!toast) {
+          toast = document.createElement('div');
+          toast.className = 'toast';
+          document.body.appendChild(toast);
+        }
+        toast.textContent = message;
+        // force reflow then animate in
+        void toast.offsetWidth;
+        toast.classList.add('is-visible');
+        clearTimeout(toast._hideTimer);
+        toast._hideTimer = setTimeout(() => toast.classList.remove('is-visible'), 2600);
+      };
+      playBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showToast('Video arriving soon — we’re still in nonna’s kitchen.');
       });
     }
 
