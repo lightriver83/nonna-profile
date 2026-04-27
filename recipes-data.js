@@ -12,6 +12,7 @@ window.recipesData = {
     badge: "Primi",
     hero: { src: "images/recipes/cappelletti-romagnoli.jpg", alt: "Cappelletti romagnoli in brodo, plated at a rustic wooden table" },
     extraThumbs: [
+      { src: "images/recipes/cappelletti-romagnoli-step-1.jpg", alt: "Nonna Teresa's hands mixing the cappelletti filling: ricotta, raviggiolo, parmigiano, lemon zest" },
       { src: "images/recipes/cappelletti-romagnoli-step-2.jpg", alt: "Nonna Teresa rolling a sheet of fresh pasta with the wooden mattarello" },
       { src: "images/recipes/cappelletti-romagnoli-step-3.jpg", alt: "Copper pot of brodo simmering on a vintage stove" }
     ],
