@@ -273,15 +273,18 @@
           elHero.alt = recipe.hero.alt || recipe.title;
         }
 
-        // Thumbs — main + 3 generic kitchen photos for visual rhythm
+        // Thumbs — main + recipe-specific extras (or generic kitchen fallback)
         const elThumbs = document.getElementById('rd-thumbs');
         if (elThumbs) {
-          const extraThumbs = [
+          const fallbackThumbs = [
             { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=85&auto=format&fit=crop', alt: 'Flour, rolling pin and a worn recipe notebook' },
             { src: 'https://images.unsplash.com/photo-1516684669134-de6f7c473a2a?w=400&q=85&auto=format&fit=crop', alt: 'Hands working fresh dough on a wooden board' },
             { src: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&q=85&auto=format&fit=crop', alt: 'A steaming pot on a home stove' }
           ];
-          const allThumbs = [{ src: recipe.hero.src, alt: recipe.hero.alt || recipe.title, active: true }, ...extraThumbs];
+          const extras = (Array.isArray(recipe.extraThumbs) && recipe.extraThumbs.length > 0)
+            ? recipe.extraThumbs
+            : fallbackThumbs;
+          const allThumbs = [{ src: recipe.hero.src, alt: recipe.hero.alt || recipe.title, active: true }, ...extras];
           elThumbs.innerHTML = allThumbs.map(t =>
             `<img${t.active ? ' class="is-active"' : ''} src="${t.src}" alt="${t.alt}" />`
           ).join('');

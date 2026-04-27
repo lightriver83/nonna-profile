@@ -288,23 +288,21 @@
 
 <dialog id="submit-modal" class="modal" aria-labelledby="submit-modal-title">
   <form class="modal__form" novalidate>
-    <h2 id="submit-modal-title">Your grandmother's recipe<br/><em>at our table.</em></h2>
-    <p class="modal__intro">Tell us who she is and what she cooks. We'll come back with the next steps to record her, photograph the dish, and bring it to the community cookbook.</p>
+    <h2 id="submit-modal-title">Your grandmother's recipe <em>at our table.</em></h2>
 
     <div class="modal__row">
       <label>Her name<input name="nonna" type="text" required placeholder="Nonna Teresa" /></label>
       <label>Region or city<input name="region" type="text" required placeholder="Forlì, Romagna" /></label>
     </div>
 
-    <label>Your email<input name="email" type="email" required placeholder="grandchild@example.com" /></label>
+    <div class="modal__row">
+      <label>Your email<input name="email" type="email" required placeholder="grandchild@example.com" /></label>
+      <label>The recipe<input name="recipe" type="text" required placeholder="Cappelletti in brodo" /></label>
+    </div>
 
-    <label>The recipe<input name="recipe" type="text" required placeholder="Cappelletti in brodo, the way she folds them" /></label>
+    <label>Ingredients (just a rough list)<textarea name="ingredients" rows="2" placeholder="Flour, eggs, ricotta, raviggiolo, parmigiano…"></textarea></label>
 
-    <label>Ingredients (rough list, no quantities needed yet)<textarea name="ingredients" rows="3" placeholder="Flour, eggs, ricotta, raviggiolo, parmigiano, lemon zest…"></textarea></label>
-
-    <label>Why this recipe matters to her<textarea name="story" rows="4" placeholder="A line, a memory — the table where she first learned, the day she always cooks it…"></textarea></label>
-
-    <label class="modal__file">A photo of her or the dish (optional)<input name="photo" type="file" accept="image/*" /></label>
+    <label>Why this recipe matters to her<textarea name="story" rows="2" placeholder="A line, a memory — the day she always cooks it…"></textarea></label>
 
     <div class="modal__actions">
       <button type="button" data-close-modal class="modal__btn modal__btn--ghost">Not now</button>
@@ -315,7 +313,7 @@
   <div class="modal__success" hidden>
     <div class="modal__success-mark" aria-hidden="true">🌿</div>
     <h2>Grazie.</h2>
-    <p>Your grandmother's recipe is on its way to our table.<br/>We'll be in touch within a few days to plan the recording.</p>
+    <p>Your grandmother's recipe is on its way to our table.<br/>We'll be in touch within a few days.</p>
     <button type="button" data-close-modal class="modal__btn modal__btn--primary">Close</button>
   </div>
 </dialog>

@@ -11,6 +11,10 @@ window.recipesData = {
     category: "primi",
     badge: "Primi",
     hero: { src: "images/recipes/cappelletti-romagnoli.jpg", alt: "Cappelletti romagnoli in brodo, plated at a rustic wooden table" },
+    extraThumbs: [
+      { src: "images/recipes/cappelletti-romagnoli-step-2.jpg", alt: "Nonna Teresa rolling a sheet of fresh pasta with the wooden mattarello" },
+      { src: "images/recipes/cappelletti-romagnoli-step-3.jpg", alt: "Copper pot of brodo simmering on a vintage stove" }
+    ],
     meta: { time: "3h 00m", servings: "6", difficulty: "Hard" },
     storyHtml: "&ldquo;In Romagna i cappelletti are <em>di magro</em>: cheeses only, no meat. My grandmother Teresa made them on Christmas Eve, with sisters and cousins around the big table and a radio on in the kitchen. The filling &mdash; ricotta, raviggiolo, parmigiano, a grate of lemon &mdash; she sealed by hand into tiny &lsquo;hats&rsquo; that fit two to a spoon. The brodo started at seven in the morning, capon and beef. By noon there was only one question allowed: <em>&ldquo;quanti?&rdquo;</em>.&rdquo;<br/><br/>&mdash; <em>Nicola, her grandson</em>",
     basket: { title: "Nonna Teresa's Sunday basket", price: "€32", when: "Order by Thursday · arrives Saturday morning" },

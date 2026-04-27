@@ -2120,6 +2120,73 @@ body::after {
   .rd__similar .recipes-grid { grid-template-columns: 1fr; }
 }
 
+/* ---------- Mobile (≤600px) ---------- */
+@media (max-width: 600px) {
+  /* Recipe detail thumbnails: were 4 × 120px, would overflow on phones. */
+  .rd__thumbs { gap: 6px; }
+  .rd__thumbs img { width: auto; flex: 1 1 0; min-width: 0; aspect-ratio: 4/3; }
+
+  /* Recipe detail container: tighter top padding */
+  .rd { padding-top: clamp(80px, 14vw, 110px); }
+
+  /* Head meta wraps cleanly */
+  .rd__meta { flex-wrap: wrap; gap: 16px 28px; }
+  .rd__meta strong { font-size: 18px; }
+
+  /* Story side-line: less left padding so text doesn't crush */
+  .rd__story { padding-left: 14px; font-size: 16px; }
+
+  /* Steps: tighter "01" gutter */
+  .rd__steps li { grid-template-columns: 38px 1fr; gap: 14px; padding: 14px 0; }
+  .rd__steps li::before { font-size: 24px; }
+  .rd__steps li p { font-size: 15px; line-height: 1.55; }
+
+  /* Ingredients box: less padding */
+  .rd__ingredients { padding: 22px; }
+  .rd__ingredients h3 { font-size: 18px; margin-bottom: 12px; }
+  .rd__ingredients li { font-size: 13px; }
+
+  /* Basket CTA */
+  .basket-cta { padding: 22px; }
+  .basket-cta__title { font-size: 20px; }
+  .basket-cta__price { font-size: 30px; margin: 10px 0; }
+  .basket-cta button { padding: 13px; font-size: 12px; letter-spacing: .18em; }
+  .basket-cta__stats strong { font-size: 20px; }
+
+  /* Reactions: smaller, two-column friendly */
+  .rd__reactions { padding: 14px; gap: 8px; margin: 32px 0; }
+  .rd__reactions button { padding: 8px 12px; font-size: 12.5px; gap: 6px; }
+  .rd__reactions .lbl { font-size: 12.5px; }
+
+  /* Comments avatar smaller */
+  .rd__comment { grid-template-columns: 36px 1fr; gap: 12px; padding: 16px 0; }
+  .rd__comment-avatar { width: 36px; height: 36px; font-size: 15px; }
+  .rd__comment p { font-size: 14px; }
+
+  /* Recipes grid: cards full width on phone, slightly tighter padding */
+  .recipes-grid { gap: 16px; }
+  .recipe-card__body { padding: 14px 16px; }
+  .recipe-card__body h3 { font-size: 17px; }
+
+  /* Submit CTA card: vertical rhythm tighter */
+  .recipe-submit-card { padding: 22px; gap: 10px; }
+  .recipe-submit-card h3 { font-size: 19px; }
+  .recipe-submit-card p { font-size: 14px; }
+
+  /* Catalog hero: title doesn't crush */
+  .catalog-hero h1 { font-size: clamp(34px, 9vw, 48px); }
+  .catalog-hero p { font-size: 15px; }
+  .searchbar input { font-size: 15px; padding: 12px 14px; }
+
+  /* Filter chips: smaller */
+  .filter-chips { gap: 6px; }
+  .filter-chips button { padding: 8px 14px; font-size: 12px; }
+
+  /* Nav: tighter spacing */
+  .nav__links { display: none; }
+  .nav__cta { font-size: 12px; padding: 8px 14px; }
+}
+
 /* ---------- Submit-recipe CTA card (catalog) ---------- */
 .recipe-submit-card {
   display: flex;
@@ -2186,15 +2253,15 @@ body::after {
   letter-spacing: 0.01em;
 }
 
-/* ---------- Modal (native <dialog>) ---------- */
+/* ---------- Modal (native <dialog>) — fixed, never scrolls internally ---------- */
 .modal {
   border: none;
   padding: 0;
   background: transparent;
   color: var(--ink);
-  max-width: 620px;
-  width: calc(100vw - 32px);
-  max-height: 92vh;
+  max-width: 560px;
+  width: calc(100vw - 24px);
+  max-height: calc(100vh - 24px);
   margin: auto;
   border-radius: 4px;
   overflow: visible;
@@ -2222,62 +2289,57 @@ body::after {
 .modal__form,
 .modal__success {
   background: var(--paper);
-  padding: clamp(28px, 4vw, 44px);
+  padding: clamp(20px, 3.5vw, 32px);
   border-radius: 4px;
   border: 1px solid var(--line-soft);
   box-shadow: 0 30px 80px -20px rgba(28, 22, 18, .35);
-  max-height: 92vh;
-  overflow-y: auto;
+  overflow: hidden;
 }
 
 .modal__form h2,
 .modal__success h2 {
   font-family: var(--ff-display);
   font-weight: 300;
-  font-size: clamp(26px, 2.6vw, 36px);
-  line-height: 1.05;
+  font-size: clamp(22px, 2.3vw, 28px);
+  line-height: 1.1;
   letter-spacing: -0.015em;
   margin: 0 0 14px;
 }
 .modal__form h2 em { color: var(--terracotta-2); font-weight: 400; }
-.modal__intro {
-  font-family: var(--ff-body);
-  font-size: 16px;
-  color: var(--ink-soft);
-  line-height: 1.55;
-  margin: 0 0 22px;
-}
 
 .modal__form label {
   display: block;
   font-family: var(--ff-accent);
-  font-size: 14px;
+  font-size: 12.5px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 .modal__form .modal__row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  gap: 10px;
+  margin-bottom: 10px;
 }
+.modal__form .modal__row label { margin-bottom: 0; }
+
 .modal__form input[type="text"],
 .modal__form input[type="email"],
 .modal__form textarea {
   display: block;
   width: 100%;
-  margin-top: 6px;
-  padding: 11px 13px;
+  margin-top: 4px;
+  padding: 8px 11px;
   background: var(--cream);
   border: 1px solid var(--line);
   border-radius: 3px;
   font-family: var(--ff-body);
-  font-size: 16px;
+  font-size: 14.5px;
   letter-spacing: 0;
   text-transform: none;
   color: var(--ink);
-  line-height: 1.45;
+  line-height: 1.4;
   transition: border-color .25s var(--ease-out), background .25s var(--ease-out);
 }
 .modal__form input:focus,
@@ -2286,24 +2348,14 @@ body::after {
   border-color: var(--terracotta);
   background: var(--paper);
 }
-.modal__form textarea { resize: vertical; min-height: 80px; }
-
-.modal__file input[type="file"] {
-  margin-top: 8px;
-  padding: 8px 0;
-  font-family: var(--ff-body);
-  font-size: 14px;
-  text-transform: none;
-  letter-spacing: 0;
-  color: var(--ink-soft);
-}
+.modal__form textarea { resize: none; min-height: 0; }
 
 .modal__actions {
   display: flex;
-  gap: 10px;
+  gap: 8px;
   justify-content: flex-end;
-  margin-top: 18px;
-  padding-top: 18px;
+  margin-top: 12px;
+  padding-top: 12px;
   border-top: 1px solid var(--line-soft);
 }
 
@@ -2311,10 +2363,10 @@ body::after {
   appearance: none;
   border: 1.5px solid transparent;
   border-radius: 3px;
-  padding: 12px 22px;
+  padding: 9px 18px;
   font-family: var(--ff-accent);
   font-style: italic;
-  font-size: 17px;
+  font-size: 15.5px;
   letter-spacing: 0.01em;
   cursor: pointer;
   transition: background .25s var(--ease-out), color .25s var(--ease-out), border-color .25s var(--ease-out), transform .25s var(--ease-out);
@@ -2338,23 +2390,30 @@ body::after {
 
 .modal__success {
   text-align: center;
-  padding: clamp(36px, 5vw, 56px);
+  padding: clamp(28px, 4vw, 40px);
 }
 .modal__success-mark {
-  font-size: 44px;
-  margin-bottom: 14px;
+  font-size: 38px;
+  margin-bottom: 10px;
 }
 .modal__success p {
   color: var(--ink-soft);
-  font-size: 17px;
-  line-height: 1.6;
-  margin: 0 0 24px;
+  font-size: 15px;
+  line-height: 1.55;
+  margin: 0 0 18px;
 }
 
 @media (max-width: 600px) {
-  .modal__form .modal__row { grid-template-columns: 1fr; }
-  .modal__actions { flex-direction: column-reverse; align-items: stretch; }
-  .modal__btn { width: 100%; padding: 14px; }
+  .modal { width: calc(100vw - 16px); }
+  .modal__form,
+  .modal__success { padding: 18px; }
+  .modal__form h2 { font-size: 20px; margin-bottom: 10px; }
+  .modal__form .modal__row { grid-template-columns: 1fr; gap: 8px; margin-bottom: 8px; }
+  .modal__form label { margin-bottom: 8px; font-size: 11.5px; }
+  .modal__form input,
+  .modal__form textarea { padding: 7px 10px; font-size: 14px; }
+  .modal__actions { flex-direction: column-reverse; gap: 6px; padding-top: 10px; margin-top: 10px; }
+  .modal__btn { width: 100%; padding: 10px; font-size: 15px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
