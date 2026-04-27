@@ -4,8 +4,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="theme-color" content="#F5EDE0" />
-<title>Cappelletti romagnoli in brodo — Nona</title>
-<meta name="description" content="Nonna Teresa's cappelletti romagnoli in brodo — the recipe, the story, the basket." />
+<title>Recipe — Nona</title>
+<meta name="description" content="A recipe from the community cookbook — the story, the steps, the basket." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -43,26 +43,21 @@
 
   <header class="rd__head">
     <div>
-      <h1 class="rd__title"><em class="rd__title-name">Cappelletti romagnoli in brodo</em></h1>
-      <p class="rd__by">Nonna Teresa · Forlì, Romagna</p>
+      <h1 class="rd__title"><em class="rd__title-name" id="rd-title">Loading recipe…</em></h1>
+      <p class="rd__by" id="rd-by">&nbsp;</p>
     </div>
     <div class="rd__meta">
-      <div>Time <strong>3h 00m</strong></div>
-      <div>Serves <strong>6</strong></div>
-      <div>Difficulty <strong>Medium</strong></div>
+      <div>Time <strong id="rd-meta-time">—</strong></div>
+      <div>Serves <strong id="rd-meta-servings">—</strong></div>
+      <div>Difficulty <strong id="rd-meta-difficulty">—</strong></div>
     </div>
   </header>
 
   <div class="rd__media">
-    <img src="images/recipes/cappelletti-romagnoli.jpg" alt="Cappelletti romagnoli in brodo, plated at a rustic wooden table" />
-    <button class="play" type="button" aria-label="Play video of Nonna Teresa making cappelletti"></button>
+    <img id="rd-hero" src="" alt="" />
+    <button class="play" type="button" aria-label="Play recipe video"></button>
   </div>
-  <div class="rd__thumbs">
-    <img class="is-active" src="images/recipes/cappelletti-romagnoli.jpg" alt="Cappelletti in brodo plated" />
-    <img src="https://images.unsplash.com/photo-1516684669134-de6f7c473a2a?w=400&q=85&auto=format&fit=crop" alt="Fresh pasta dough being rolled" />
-    <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=85&auto=format&fit=crop" alt="Flour, rolling pin and recipe notebook" />
-    <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&q=85&auto=format&fit=crop" alt="Steaming bowl of broth" />
-  </div>
+  <div class="rd__thumbs" id="rd-thumbs"></div>
 
   <div class="rd__reactions">
     <button data-rx="seats" data-base="412"><span class="ico">🍷</span><span class="lbl">Seats at the table</span><span class="cnt">412</span></button>
@@ -73,21 +68,10 @@
 
   <div class="rd__body">
     <div class="rd__main">
-      <p class="rd__story">
-        &ldquo;In Romagna i cappelletti sono <em>di magro</em>: solo formaggi, niente carne. Mia nonna Teresa li faceva il 24 dicembre, con le sorelle e le cugine intorno al tavolone, e una radio accesa in cucina. Il ripieno &mdash; ricotta, raviggiolo, parmigiano, una grattata di limone &mdash; lo chiudeva a mano in minuscoli cappelletti che stavano due in un cucchiaio. Il brodo partiva alle sette del mattino, di cappone e manzo. A mezzogiorno di Natale tutta la famiglia sapeva che c&rsquo;era solo una domanda possibile: <em>&ldquo;quanti?&rdquo;</em>.&rdquo;
-        <br/><br/>
-        &mdash; <em>Nicola, her grandson</em>
-      </p>
+      <p class="rd__story" id="rd-story">&nbsp;</p>
 
       <h2 class="rd__h3">The steps</h2>
-      <ol class="rd__steps">
-        <li><p><strong>Make the filling the day before.</strong> In a bowl, mix 250g fresh ricotta with 150g <em>raviggiolo</em> (or stracchino if raviggiolo is hard to find), 150g grated Parmigiano-Reggiano, one whole egg, a generous grate of fresh nutmeg, the zest of half an untreated lemon, and a small pinch of salt. It should be smooth, dense, and smell like Christmas. Cover and rest overnight in the fridge.</p></li>
-        <li><p><strong>The dough, Sunday morning.</strong> 400g flour 00, 4 eggs, a pinch of salt. Knead by hand for 15 minutes until elastic and pale. Wrap and rest under a warm bowl for 30 minutes. No shortcuts.</p></li>
-        <li><p><strong>Roll the sfoglia.</strong> Thin enough to read the Gazzetta through it. Cut into 3&times;3 cm squares with a sharp knife or a smooth wheel. Keep the rest covered &mdash; the pasta dries faster than you think.</p></li>
-        <li><p><strong>Fill &amp; fold the cappelletto.</strong> A pea-sized dot of filling in the centre. Fold the square into a triangle, pressing the edges firmly. Wrap the long side around your fingertip, pinch the two tips together, and flip up the top fold: that&rsquo;s the &ldquo;hat&rdquo;. The first twenty will look shy. The next two hundred won&rsquo;t.</p></li>
-        <li><p><strong>The brodo.</strong> Half a hen (or a piece of capon, if you can find one), 400g beef shank, one onion, one carrot, one stalk of celery, one small tomato. Cover with cold water. Four hours on the lowest possible flame. Skim the foam slowly, never all at once.</p></li>
-        <li><p><strong>Cook and serve.</strong> Drop the cappelletti into the gently simmering brodo. Four minutes, no more. Serve in warmed bowls with a snowfall of Parmigiano. The only question allowed at the table is <em>&ldquo;quanti?&rdquo;</em> &mdash; <em>how many?</em>.</p></li>
-      </ol>
+      <ol class="rd__steps" id="rd-steps"></ol>
 
       <h2 class="rd__h3 rd__comments-title">What the community is saying</h2>
       <div class="rd__comments">
@@ -95,21 +79,21 @@
           <div class="rd__comment-avatar">H</div>
           <div>
             <strong>Hiro M.</strong><time>2 days ago · Kyoto</time>
-            <p>My grandmother makes gyōza with almost the same folding gesture. I sent her this video — she wants to invite Nonna Teresa for tea. 🙏</p>
+            <p>My grandmother makes gyōza with almost the same folding gesture. I sent her this video — she wants to invite this nonna for tea. 🙏</p>
           </div>
         </div>
         <div class="rd__comment">
           <div class="rd__comment-avatar">M</div>
           <div>
             <strong>Mariana P.</strong><time>5 days ago · Oaxaca</time>
-            <p>Cooked it last Sunday with my kids. The brodo made my kitchen feel like my grandmother&rsquo;s in 1998. The raviggiolo was the detail — thank you for this.</p>
+            <p>Cooked it last Sunday with my kids. My kitchen smelled like my own grandmother's in 1998. Thank you for this.</p>
           </div>
         </div>
         <div class="rd__comment">
           <div class="rd__comment-avatar">L</div>
           <div>
             <strong>Léa B.</strong><time>1 week ago · Lyon</time>
-            <p>The basket arrived on Saturday morning, perfect timing. The raviggiolo was a revelation. One question — the hen, which age? My butcher asked.</p>
+            <p>The basket arrived on Saturday morning, perfect timing. Every detail mattered. We're cooking it again next weekend.</p>
           </div>
         </div>
       </div>
@@ -117,26 +101,15 @@
 
     <aside class="rd__side">
       <div class="rd__ingredients">
-        <h3>Ingredients · serves 6</h3>
-        <ul>
-          <li>Flour 00 <strong>400 g</strong></li>
-          <li>Eggs (whole, large) <strong>4</strong></li>
-          <li>Fresh ricotta <strong>250 g</strong></li>
-          <li>Raviggiolo (or stracchino) <strong>150 g</strong></li>
-          <li>Parmigiano-Reggiano 24m <strong>150 g + extra</strong></li>
-          <li>Lemon zest (untreated) <strong>½ lemon</strong></li>
-          <li>Nutmeg, salt <strong>q.b.</strong></li>
-          <li>Hen or capon, for brodo <strong>½ · ≈ 1 kg</strong></li>
-          <li>Beef shank <strong>400 g</strong></li>
-          <li>Onion, carrot, celery, tomato <strong>1 each</strong></li>
-        </ul>
+        <h3 id="rd-ingredients-title">Ingredients</h3>
+        <ul id="rd-ingredients"></ul>
       </div>
 
       <div class="basket-cta">
         <span class="basket-cta__eyebrow">Ship the ingredients</span>
-        <div class="basket-cta__title">Nonna Teresa&rsquo;s Sunday basket</div>
-        <div class="basket-cta__price">€32</div>
-        <div class="basket-cta__when">Order by Thursday · arrives Saturday morning</div>
+        <div class="basket-cta__title" id="rd-basket-title">Sunday basket</div>
+        <div class="basket-cta__price" id="rd-basket-price">€—</div>
+        <div class="basket-cta__when" id="rd-basket-when">Order by Thursday · arrives Saturday morning</div>
         <button type="button">Add to my table</button>
         <div class="basket-cta__stats">
           <div><strong>412</strong>seats at the table</div>
@@ -148,41 +121,7 @@
 
   <section class="rd__similar">
     <h2 class="rd__h3">You might also love…</h2>
-    <div class="recipes-grid">
-      <a class="recipe-card" href="recipe.html?slug=tiramisu">
-        <div class="recipe-card__media">
-          <img src="images/recipes/tiramisu.jpg" alt="" loading="lazy" />
-          <span class="recipe-card__badge">Dolci</span>
-        </div>
-        <div class="recipe-card__body">
-          <h3>Tiramisù (the real one)</h3>
-          <p class="recipe-card__by">Nonna Marilena · Treviso, IT</p>
-          <div class="recipe-card__meta"><span>🍷 904</span><span>😋 211</span></div>
-        </div>
-      </a>
-      <a class="recipe-card" href="recipe.html?slug=arancini">
-        <div class="recipe-card__media">
-          <img src="images/recipes/arancini.jpg" alt="" loading="lazy" />
-          <span class="recipe-card__badge">Street food</span>
-        </div>
-        <div class="recipe-card__body">
-          <h3>Arancini al ragù</h3>
-          <p class="recipe-card__by">Nonna Rosalia · Palermo, IT</p>
-          <div class="recipe-card__meta"><span>🍷 352</span><span>😋 98</span></div>
-        </div>
-      </a>
-      <a class="recipe-card" href="recipe.html?slug=piadina">
-        <div class="recipe-card__media">
-          <img src="images/recipes/piadina.jpg" alt="" loading="lazy" />
-          <span class="recipe-card__badge">Pani</span>
-        </div>
-        <div class="recipe-card__body">
-          <h3>Piadina romagnola</h3>
-          <p class="recipe-card__by">Nonna Mirella · Forlì, IT</p>
-          <div class="recipe-card__meta"><span>🍷 512</span><span>😋 103</span></div>
-        </div>
-      </a>
-    </div>
+    <div class="recipes-grid" id="rd-similar"></div>
   </section>
 </article>
 
@@ -211,6 +150,7 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
+<script src="recipes-data.js" defer></script>
 <script src="script.js" defer></script>
 </body>
 </html>

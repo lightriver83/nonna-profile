@@ -233,27 +233,110 @@
       });
     }
 
-    /* --- Recipe detail — pull ?slug & patch title --- */
-    const rdTitle = document.querySelector('.rd__title-name');
-    if (rdTitle) {
+    /* --- Recipe detail — populate dynamically from window.recipesData --- */
+    const rdRoot = document.querySelector('.rd');
+    if (rdRoot) {
       const params = new URLSearchParams(window.location.search);
-      const slug = params.get('slug');
-      const map = {
-        'cappelletti-romagnoli': { name: 'Cappelletti romagnoli in brodo', by: 'Nonna Teresa · Forlì, Romagna' },
-        'tortellini-in-brodo': { name: 'Tortellini in brodo', by: 'Nonna Teresa · Bologna, IT' },
-        'orecchiette-cime-di-rapa': { name: 'Orecchiette con cime di rapa', by: 'Nonna Rosa · Bari, IT' },
-        'osso-buco-milanese': { name: 'Osso buco alla milanese', by: 'Nonna Luigia · Milano, IT' },
-        'tiramisu': { name: 'Tiramisù', by: 'Nonna Marilena · Treviso, IT' },
-        'focaccia-di-recco': { name: 'Focaccia di Recco', by: 'Nonna Pinuccia · Genova, IT' },
-        'arancini': { name: 'Arancini al ragù', by: 'Nonna Rosalia · Palermo, IT' },
-        'piadina': { name: 'Piadina romagnola', by: 'Nonna Mirella · Forlì, IT' },
-      };
-      const rec = map[slug];
-      if (rec) {
-        rdTitle.textContent = rec.name;
-        const byEl = document.querySelector('.rd__by');
-        if (byEl) byEl.textContent = rec.by;
-        document.title = rec.name + ' — Nona';
+      const slug = params.get('slug') || 'cappelletti-romagnoli';
+      const data = window.recipesData || {};
+      const recipe = data[slug];
+
+      if (!recipe) {
+        rdRoot.innerHTML = `
+          <a href="recipes.html" class="rd__back">Back to recipes</a>
+          <div class="rd__empty">
+            <h1 class="rd__title"><em>Recipe not found</em></h1>
+            <p>We couldn't find a recipe at this address. <a href="recipes.html">Back to all recipes</a>.</p>
+          </div>`;
+      } else {
+        // Page title
+        document.title = recipe.title + ' — Nona';
+
+        // Header
+        const elTitle = document.getElementById('rd-title');
+        const elBy = document.getElementById('rd-by');
+        if (elTitle) elTitle.textContent = recipe.title;
+        if (elBy) elBy.textContent = `${recipe.byNonna} · ${recipe.region}`;
+
+        // Meta
+        const elTime = document.getElementById('rd-meta-time');
+        const elServ = document.getElementById('rd-meta-servings');
+        const elDiff = document.getElementById('rd-meta-difficulty');
+        if (elTime) elTime.textContent = recipe.meta.time;
+        if (elServ) elServ.textContent = recipe.meta.servings;
+        if (elDiff) elDiff.textContent = recipe.meta.difficulty;
+
+        // Hero image
+        const elHero = document.getElementById('rd-hero');
+        if (elHero) {
+          elHero.src = recipe.hero.src;
+          elHero.alt = recipe.hero.alt || recipe.title;
+        }
+
+        // Thumbs — main + 3 generic kitchen photos for visual rhythm
+        const elThumbs = document.getElementById('rd-thumbs');
+        if (elThumbs) {
+          const extraThumbs = [
+            { src: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&q=85&auto=format&fit=crop', alt: 'Flour, rolling pin and a worn recipe notebook' },
+            { src: 'https://images.unsplash.com/photo-1516684669134-de6f7c473a2a?w=400&q=85&auto=format&fit=crop', alt: 'Hands working fresh dough on a wooden board' },
+            { src: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&q=85&auto=format&fit=crop', alt: 'A steaming pot on a home stove' }
+          ];
+          const allThumbs = [{ src: recipe.hero.src, alt: recipe.hero.alt || recipe.title, active: true }, ...extraThumbs];
+          elThumbs.innerHTML = allThumbs.map(t =>
+            `<img${t.active ? ' class="is-active"' : ''} src="${t.src}" alt="${t.alt}" />`
+          ).join('');
+        }
+
+        // Story
+        const elStory = document.getElementById('rd-story');
+        if (elStory) elStory.innerHTML = recipe.storyHtml;
+
+        // Steps
+        const elSteps = document.getElementById('rd-steps');
+        if (elSteps) {
+          elSteps.innerHTML = recipe.steps.map(s => `<li><p>${s}</p></li>`).join('');
+        }
+
+        // Ingredients
+        const elIngTitle = document.getElementById('rd-ingredients-title');
+        const elIng = document.getElementById('rd-ingredients');
+        if (elIngTitle) elIngTitle.textContent = `Ingredients · serves ${recipe.meta.servings}`;
+        if (elIng) {
+          elIng.innerHTML = recipe.ingredients.map(i =>
+            `<li>${i.name} <strong>${i.qty}</strong></li>`
+          ).join('');
+        }
+
+        // Basket
+        const elBT = document.getElementById('rd-basket-title');
+        const elBP = document.getElementById('rd-basket-price');
+        const elBW = document.getElementById('rd-basket-when');
+        if (elBT && recipe.basket) elBT.textContent = recipe.basket.title;
+        if (elBP && recipe.basket) elBP.textContent = recipe.basket.price;
+        if (elBW && recipe.basket) elBW.textContent = recipe.basket.when;
+
+        // Similar
+        const elSim = document.getElementById('rd-similar');
+        if (elSim && Array.isArray(recipe.similar)) {
+          elSim.innerHTML = recipe.similar
+            .map(s => data[s])
+            .filter(Boolean)
+            .map(r => {
+              const slugKey = Object.keys(data).find(k => data[k] === r);
+              return `
+                <a class="recipe-card" href="recipe.html?slug=${slugKey}">
+                  <div class="recipe-card__media">
+                    <img src="${r.hero.src}" alt="" loading="lazy" />
+                    <span class="recipe-card__badge">${r.badge}</span>
+                  </div>
+                  <div class="recipe-card__body">
+                    <h3>${r.title}</h3>
+                    <p class="recipe-card__by">${r.byNonna} · ${r.region}</p>
+                    <div class="recipe-card__meta"><span>🍷 —</span><span>😋 —</span></div>
+                  </div>
+                </a>`;
+            }).join('');
+        }
       }
     }
 
@@ -268,6 +351,46 @@
         if (mainVideo) mainVideo.setAttribute('poster', th.src);
       });
     });
+
+    /* --- Submit recipe modal (catalog page) --- */
+    const submitTrigger = document.querySelector('[data-open-modal="submit"]');
+    const submitModal = document.getElementById('submit-modal');
+    if (submitTrigger && submitModal && typeof submitModal.showModal === 'function') {
+      const formEl = submitModal.querySelector('.modal__form');
+      const successEl = submitModal.querySelector('.modal__success');
+      const closeBtns = submitModal.querySelectorAll('[data-close-modal]');
+      let autoCloseTimer = null;
+
+      const resetModal = () => {
+        if (formEl) { formEl.reset(); formEl.hidden = false; }
+        if (successEl) successEl.hidden = true;
+        if (autoCloseTimer) { clearTimeout(autoCloseTimer); autoCloseTimer = null; }
+      };
+
+      submitTrigger.addEventListener('click', () => {
+        resetModal();
+        submitModal.showModal();
+      });
+
+      closeBtns.forEach(btn => btn.addEventListener('click', () => submitModal.close()));
+
+      submitModal.addEventListener('click', (e) => {
+        const rect = submitModal.getBoundingClientRect();
+        const inside = e.clientX >= rect.left && e.clientX <= rect.right && e.clientY >= rect.top && e.clientY <= rect.bottom;
+        if (!inside) submitModal.close();
+      });
+
+      submitModal.addEventListener('close', resetModal);
+
+      if (formEl) {
+        formEl.addEventListener('submit', (e) => {
+          e.preventDefault();
+          formEl.hidden = true;
+          if (successEl) successEl.hidden = false;
+          autoCloseTimer = setTimeout(() => submitModal.close(), 3200);
+        });
+      }
+    }
 
     /* --- Recipe detail — reactions (persisted localStorage) --- */
     const reactions = document.querySelectorAll('.rd__reactions button');
