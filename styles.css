@@ -1337,6 +1337,12 @@ body::after {
 }
 .numbers-block .timeline { margin-top: clamp(40px, 6vw, 80px); }
 .numbers-block .charts { margin-top: clamp(60px, 8vw, 100px); margin-bottom: 0; }
+.numbers-block .section-head--split {
+  grid-template-columns: 1fr;
+  gap: 28px;
+  align-items: start;
+}
+.numbers-block .section-head--split .how__lede { max-width: 65ch; }
 
 /* ---------- Q&A ---------- */
 .qa {
