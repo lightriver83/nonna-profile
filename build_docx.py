@@ -201,7 +201,7 @@ doc.add_page_break()
 
 # ========== MISSION ==========
 H1("Capitolo 5 — Mission")
-H3("[mission / eyebrow]"); P("02 · Mission")
+H3("[mission / eyebrow]"); P("03 · Mission")
 H3("[mission / titolo grande]")
 P("To feel at home with your grandmother, anywhere in the world.")
 NOTE("'at home' in corsivo.")
@@ -212,7 +212,7 @@ doc.add_page_break()
 
 # ========== VISION ==========
 H1("Capitolo 6 — Vision")
-H3("[vision / eyebrow]"); P("03 · Vision")
+H3("[vision / eyebrow]"); P("04 · Vision")
 H3("[vision / titolo grande]")
 P("A world where every kitchen holds a grandmother — and every grandchild has a thousand.")
 NOTE("'a grandmother' in corsivo.")
@@ -225,7 +225,7 @@ doc.add_page_break()
 H1("Capitolo 7 — How it works (4 step)")
 
 H3("[how / eyebrow]")
-P("04 · How it works")
+P("05 · How it works")
 
 H3("[how / titolo sezione]")
 P("Four steps. Zero complications.")
@@ -268,7 +268,7 @@ NOTE("Questa sezione arriva subito dopo 'How it works' per mostrare al volo la "
      "customer experience. Solo 3 card cliccabili come anteprima del catalogo completo.")
 
 H3("[recipes / eyebrow]")
-P("05 · The community cookbook")
+P("06 · The community cookbook")
 
 H3("[recipes / titolo sezione]")
 P("Taste it before you cook it.")
@@ -306,7 +306,7 @@ doc.add_page_break()
 H1("Capitolo 9 — The community (Match / Meet / Reward)")
 
 H3("[community / eyebrow]")
-P("06 · The community")
+P("07 · The community")
 
 H3("[community / titolo sezione]")
 P("A table is the oldest social network.")
@@ -349,7 +349,7 @@ doc.add_page_break()
 H1("Capitolo 10 — Team (5 founders)")
 
 H3("[team / eyebrow]")
-P("07 · Our founders")
+P("10 · Our founders")
 
 H3("[team / titolo sezione]")
 P("Five founders. Five family kitchens. One table to share them all.")
@@ -394,7 +394,7 @@ doc.add_page_break()
 # ========== WHY NOW ==========
 H1("Capitolo 11 — Why Now")
 
-H3("[whynow / eyebrow]"); P("08 · Why now")
+H3("[whynow / eyebrow]"); P("02 · Why now")
 
 H3("[whynow / titolo sezione]")
 P("The best recipes have always travelled by hand.")
@@ -420,7 +420,7 @@ doc.add_page_break()
 # ========== TRUST ==========
 H1("Capitolo 12 — Trust")
 
-H3("[trust / eyebrow]"); P("09 · Trust")
+H3("[trust / eyebrow]"); P("11 · Trust")
 
 H3("[trust / logo/partner list]")
 P("Slow Food · UNESCO Heritage · Financial Times · Monocle · United Ventures · "
@@ -439,7 +439,7 @@ NOTE("Sezione spostata dopo 'Trust' e prima della CTA. Contiene la timeline "
      "dell'azienda e i 2 grafici SVG (donut categorie + barchart paesi).")
 
 H3("[numbers-block / eyebrow]")
-P("10 · By the numbers")
+P("08 · By the numbers")
 
 H3("[numbers-block / titolo sezione]")
 P("Two years. A thousand kitchens. One long Sunday lunch.")
@@ -511,7 +511,7 @@ doc.add_page_break()
 # ========== DEBRIEF DIDATTICO ==========
 H1("Capitolo 15 — Classroom Debrief")
 
-H3("[debrief / eyebrow]"); P("11 · Classroom debrief")
+H3("[debrief / eyebrow]"); P("12 · Classroom debrief")
 
 H3("[debrief / titolo sezione]")
 P("How this profile follows the rules.")

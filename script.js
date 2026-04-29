@@ -318,7 +318,15 @@
         if (elBP && recipe.basket) elBP.textContent = recipe.basket.price;
         if (elBW && recipe.basket) elBW.textContent = recipe.basket.when;
 
-        // Similar
+        // Similar — fake stats deterministici da slug (reload-stable)
+        const fakeStat = (slug, kind) => {
+          let h = 0;
+          const seed = slug + kind;
+          for (let i = 0; i < seed.length; i++) h = ((h << 5) - h + seed.charCodeAt(i)) | 0;
+          const ranges = { seats: [120, 920], licked: [28, 240] };
+          const [min, max] = ranges[kind];
+          return (Math.abs(h) % (max - min)) + min;
+        };
         const elSim = document.getElementById('rd-similar');
         if (elSim && Array.isArray(recipe.similar)) {
           elSim.innerHTML = recipe.similar
@@ -335,7 +343,7 @@
                   <div class="recipe-card__body">
                     <h3>${r.title}</h3>
                     <p class="recipe-card__by">${r.byNonna} · ${r.region}</p>
-                    <div class="recipe-card__meta"><span>🍷 —</span><span>😋 —</span></div>
+                    <div class="recipe-card__meta"><span>🍷 ${fakeStat(slugKey, 'seats')}</span><span>😋 ${fakeStat(slugKey, 'licked')}</span></div>
                   </div>
                 </a>`;
             }).join('');

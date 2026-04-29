@@ -1505,8 +1505,9 @@ body::after {
 }
 .community__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 3vw, 48px);
+  grid-template-columns: repeat(2, minmax(0, 540px));
+  justify-content: center;
+  gap: clamp(24px, 4vw, 64px);
   margin-top: 40px;
 }
 .community__block {
