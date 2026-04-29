@@ -9,7 +9,8 @@ from reportlab.platypus import (
     Table, TableStyle,
 )
 
-OUT = "/Users/nicolagiunchi/Repository/nonna-profile/Nana_Pitch_Opening_Nick.pdf"
+import os
+OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Nana_Pitch_Opening_Nick.pdf")
 
 # Nana brand-adjacent palette
 INK      = HexColor("#1C1612")
@@ -128,8 +129,8 @@ def build():
     story.append(Paragraph("NANA &middot; PITCH SCRIPT", styles["eyebrow"]))
     story.append(Paragraph("Opening — <i>Nick Giunchi</i>", styles["h1"]))
     story.append(Paragraph(
-        "Live pitch, English, large audience &middot; ~2 min 15 sec &middot; "
-        "from the hero section up to (and not including) Mission &amp; Vision.<br/>"
+        "Live pitch, English, large audience &middot; ~1 min 55 sec &middot; "
+        "Hook &rarr; Who we are &rarr; Handoff to co-founder (who tells the story).<br/>"
         "<b>Written for a B2/C1 speaker</b> — short sentences, "
         "high-frequency vocabulary, same emotional quality.",
         styles["h1sub"],
@@ -148,70 +149,55 @@ def build():
 
     # ---------- 1 · Hook ----------
     story.extend(section(
-        "1", "Hook — A kitchen you remember", "≈ 85 sec",
+        "1", "Hook — Sunday at nonna's", "≈ 70 sec",
         [
             cue("SLIDE", 'Hero. Headline visible: <i>"Preserve tradition, '
                 'one recipe at a time."</i>'),
-            script("Close your eyes. — Just for a moment. "
-                   "<b>[PAUSE 2 sec]</b>"),
-            script("It is a Sunday. — You are eight years old. — "
-                   "Maybe ten. — It doesn't matter how old, exactly. — "
-                   "You will remember the rest forever, but not the year."),
-            script("You are walking towards a kitchen. — A door that "
-                   "doesn't need a key. — You don't even knock. — You "
-                   "just push it open, and you are inside."),
-            scriptQuiet("<i>The first thing is the warmth.</i> — It "
-                        "comes out before you do. — A kitchen that has "
-                        "been awake since dawn."),
-            script("Then the air. — Slow steam from a pot. — Something "
-                   "baking, almost ready. — Onions softened in butter, "
-                   "hours ago. — Coffee left from breakfast, on a stove "
-                   "that never really cools down. — A sweet note in the "
-                   "corner — you can't tell what."),
-            script("You hear the kitchen before you see it. — The "
-                   "radio, low. — A wooden spoon tapping the side of a "
-                   "pan. — Two voices in another room — laughing about "
-                   "something nobody will remember by Tuesday. — A dog "
-                   "asleep, somewhere."),
-            script("The light is the colour of late morning. — Yellow "
-                   "on the curtain. — A square of sun on the floor "
-                   "tiles. — Dust floating inside it, slow."),
-            script("Your grandmother turns around. — Flour on her "
-                   "hands. — A small smile, just for you. — She "
-                   "doesn't say much. — <i>She doesn't have to.</i>"),
+            script("Sunday morning. — Maybe you were a child. — Maybe a "
+                   "teenager. — Maybe already an adult. — It doesn't "
+                   "matter. — You were there. — Let's go back, just for "
+                   "a minute. <b>[PAUSE 2 sec]</b>"),
+            script("Your nonna's kitchen. — A door that doesn't need a "
+                   "key. — You don't even knock. — You just push it "
+                   "open, and you are inside."),
+            scriptQuiet("<i>The first thing is the warmth.</i> — A "
+                        "kitchen that has been awake since early "
+                        "morning."),
+            script("Then the smell. — Tomato sauce on the stove since "
+                   "morning. — Bread, just out of the oven. — Roasted "
+                   "meat. — Something sweet, somewhere."),
+            script("Your nonna turns around. — Flour on her hands. — A "
+                   "small smile, just for you. — She doesn't say much. "
+                   "<i>She doesn't have to.</i>"),
             script("The table is set for too many people, on purpose. — "
-                   "A chair that wasn't there last week. — A glass with "
-                   "no owner yet. — A napkin folded slightly wrong, by "
-                   "a younger cousin who is trying."),
+                   "Everybody is talking at the same time. — Glasses "
+                   "clink. — Somebody is laughing too loud."),
             script("Then the food arrives. — And the room goes quiet. — "
                    "For one second. — Just one. <b>[PAUSE 2 sec]</b>"),
             scriptQuiet("<i>That second — was the magic.</i>"),
             script("Because nobody had to teach you what love tasted "
                    "like. — <b>You already knew.</b> <b>[PAUSE 2 sec]</b>"),
-            script("Open your eyes."),
             script("Some of you just remembered a kitchen. — Some of you "
                    "remembered a face. — Some of you remembered — that "
-                   "you haven't been there in a long time. — "
-                   "<i>Some of you remembered — that the kitchen is "
-                   "empty now.</i> — That the chair you used to sit on "
-                   "is somebody else's chair."),
+                   "you haven't been there in a very long time."),
             script("That magic — those flavours, those Sundays, the "
-                   "people we loved — <b>should not be allowed to "
-                   "disappear.</b> <b>[PAUSE]</b>"),
-            script("We built <b>Nana</b> — to make sure they don't."),
-            cue("VOICE", "First half (eyes closed): slow, low volume, "
-                "almost a whisper. The senses sections (warmth, air, "
-                "sound, light) — drop another notch, hypnotic pace."),
+                   "people we loved — <b>we want it to stay with us. — "
+                   "Forever.</b> <b>[PAUSE 2 sec]</b>"),
+            script("That is why we built <b>Nana</b>. — To keep those "
+                   "memories alive. — Forever."),
+            cue("VOICE", "First half (the kitchen scene): slow, low "
+                "volume, almost a whisper. The senses sections (warmth, "
+                "smell, table) — drop another notch, hypnotic pace."),
             cue("VOICE", '<i>"That second — was the magic"</i> — drop '
                 "another 20%. Hold the silence."),
-            cue("BODY", "Eyes closed: stand still. Don't gesture. "
-                "<i>Open your eyes</i> — open yours too, slowly, and "
-                "find three faces in the room."),
-            cue("BODY", '<i>"Your grandmother turns around"</i> — small '
+            cue("BODY", "During the kitchen scene: stand still. Don't "
+                "gesture. After <i>\"Some of you just remembered…\"</i> "
+                "— look up, slowly, and find three faces in the room."),
+            cue("BODY", '<i>"Your nonna turns around"</i> — small '
                 "open-palm gesture at chest height, like greeting "
                 "someone at the end of a hallway."),
-            cue("BODY", 'On <i>"We built Nana — to make sure they '
-                "don't.\"</i> — plant feet. Quiet conviction, not "
+            cue("BODY", 'On <i>"To keep those memories alive. — '
+                "Forever.\"</i> — plant feet. Quiet conviction, not "
                 "selling."),
         ],
     ))
@@ -236,70 +222,17 @@ def build():
         ],
     ))
 
-    # ---------- 3 · The story ----------
+    # ---------- 3 · Handoff ----------
     story.extend(section(
-        "3", "The story — how we started", "≈ 60 sec",
-        [
-            cue("SLIDE", "Scroll to <i>01 &middot; Our Story</i>."),
-            script("<b>December 26, 2022.</b> — The day after Christmas. "
-                   "<b>[PAUSE]</b>"),
-            script("Five friends — me, <b>Vittoria, Chiara, Alessia, "
-                   "the other Nicola</b> — meeting up in Bologna. — "
-                   "A small place. A bottle of wine. — Hugs. — "
-                   "<i>&ldquo;How was Christmas?&rdquo;</i>"),
-            script("And we started telling stories."),
-            script("Vittoria — her nonna in <b>Emilia Romagna</b>. "
-                   "<i>Tortellini</i> until midnight."),
-            script("Chiara — her nonna in <b>Basilicata</b>. "
-                   "<i>Peperoni cruschi</i> and <i>lagane e ceci</i>, all by hand."),
-            script("Alessia — <b>Campania</b>. Her <i>nonno's</i> "
-                   "<i>parmigiana</i> and <i>ragù</i> at sunrise."),
-            script("The other Nicola — <b>Lazio</b>. <i>Cacio e pepe</i> "
-                   "at midnight."),
-            script("And me — <b>Nonna Maura, Marche</b>. "
-                   "<i>Cappelletti in brodo</i>. — Christmas Eve, "
-                   "until two in the morning."),
-            script("Five very different lives. — Five very different "
-                   "kitchens. — But every story ended the same way."),
-            scriptQuiet("&ldquo;<i>It was magic. — And one day, "
-                        "it will be over.</i>&rdquo;"),
-            script("Somebody — I don't even remember who — said it "
-                   "out loud:"),
-            scriptQuiet("&ldquo;<i>What if we could keep it. — Forever. "
-                        "— For everybody.</i>&rdquo;"),
-            script("<b>[PAUSE 2 sec]</b>"),
-            script("That night, we were not five friends anymore. — "
-                   "We were five co-founders."),
-            script("<b>Nana was born that evening. December 26, 2022. — "
-                   "Born from five Christmas lunches. — And one shared "
-                   "idea: that magic should not have to end.</b>"),
-            cue("VOICE", "Slow the five grandmothers way down. One beat "
-                "between each region. These are the sticky names."),
-            cue("VOICE", '<i>&ldquo;It was magic. And one day, it will '
-                "be over.\"</i> — almost a whisper, slow."),
-            cue("VOICE", '<i>&ldquo;Forever. For everybody.\"</i> — '
-                "punch each word, slow beat between."),
-            cue("BODY", 'On <i>"the other Nicola"</i> — small, warm '
-                "smile. (Inside joke. If Nicola Giovannelli is not in "
-                "the room, <b>cut the line.</b>)"),
-            cue("BODY", 'On <i>"Nana was born that evening"</i> — '
-                "plant feet. Stop moving. Don't gesture. The stillness "
-                "does the work."),
-        ],
-    ))
-
-    # ---------- 4 · Handoff ----------
-    story.extend(section(
-        "4", "Handoff — set the stage", "≈ 15 sec",
+        "3", "Handoff — set the stage", "≈ 20 sec",
         [
             cue("BODY", "Straighten. Reset. Half-step back."),
-            script("So — why should you give a community cookbook your "
-                   "next two minutes? <b>[PAUSE]</b>"),
-            script("Because what we cooked at that table — was not a "
-                   "recipe. It was a <b>mission</b>. And a vision bigger "
-                   "than the five of us."),
-            script("And the best person to tell you about that — "
-                   "<i>is not me.</i> <b>[PAUSE]</b>"),
+            script("Now — the story of how we got here. <b>[PAUSE]</b>"),
+            script("<b>December 26, 2022.</b> — Five friends. — Five "
+                   "Christmas lunches. — One long table in Bologna."),
+            script("But the story is not mine to tell alone. — There is "
+                   "one person — better than me — to take you back to "
+                   "that table. <b>[PAUSE]</b>"),
             script("<b><i>Preserve tradition, one recipe at a time.</i></b> "
                    "<font color='#8A7B6A'><i>(second time — signature "
                    "line, then hand over.)</i></font>"),
@@ -340,10 +273,9 @@ def build():
          "<i>dat / dis / dey</i>. Nobody in the audience will notice. "
          "Freezing up to find the sound — <i>everyone</i> notices."),
         ("Say Italian words in Italian.",
-         "<b>Bologna, Romagna, Piemonte, Puglia, Le Marche, Lazio, "
-         "cappelletti, in brodo</b>, and the five grandmothers' names "
-         "— pronounce them in Italian. That's authentic, not wrong. "
-         "Actually, it's a <i>strength</i> on stage."),
+         "<b>Bologna</b> and <b>nonna</b> — pronounce them in Italian. "
+         "That's authentic, not wrong. Actually, it's a <i>strength</i> "
+         "on stage."),
         ("Banned italianisms.",
          "Don't say <i>\"I pass the word to…\"</i> (say <b>\"The floor "
          "is yours\"</b> or <b>\"Over to you\"</b>). Don't say "
