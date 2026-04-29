@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Nona — combined push + Cloudflare Pages deploy.
+# Nana — combined push + Cloudflare Pages deploy.
 # CF Pages is in Direct Upload mode (NOT git-connected),
 # so a plain `git push` does NOT update https://nonna-profile.pages.dev/.
 # Always run this script after committing.

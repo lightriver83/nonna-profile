@@ -1,4 +1,4 @@
-/* Nona — recipe dataset.
+/* Nana — recipe dataset.
    Single source of truth for the dynamic recipe.html template.
    Edit any entry here; recipe.html?slug=<key> will reflect changes on next load. */
 

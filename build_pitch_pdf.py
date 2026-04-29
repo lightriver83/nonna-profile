@@ -1,4 +1,4 @@
-"""Build the opening pitch PDF for Nick's Nona presentation — B2/C1-friendly."""
+"""Build the opening pitch PDF for Nick's Nana presentation — B2/C1-friendly."""
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle
 from reportlab.lib.units import cm
@@ -9,9 +9,9 @@ from reportlab.platypus import (
     Table, TableStyle,
 )
 
-OUT = "/Users/nickminimac/Repository/nonna-profile/Nona_Pitch_Opening_Nick.pdf"
+OUT = "/Users/nicolagiunchi/Repository/nonna-profile/Nana_Pitch_Opening_Nick.pdf"
 
-# Nona brand-adjacent palette
+# Nana brand-adjacent palette
 INK      = HexColor("#1C1612")
 WARM     = HexColor("#4A3E32")
 ACCENT   = HexColor("#A34A24")
@@ -118,14 +118,14 @@ def build():
         OUT, pagesize=A4,
         leftMargin=2.2 * cm, rightMargin=2.2 * cm,
         topMargin=1.8 * cm, bottomMargin=1.8 * cm,
-        title="Nona — Opening pitch (Nick Giunchi, B2/C1 version)",
+        title="Nana — Opening pitch (Nick Giunchi, B2/C1 version)",
         author="Nicola Giunchi",
     )
 
     story = []
 
     # ---------- Cover ----------
-    story.append(Paragraph("NONA &middot; PITCH SCRIPT", styles["eyebrow"]))
+    story.append(Paragraph("NANA &middot; PITCH SCRIPT", styles["eyebrow"]))
     story.append(Paragraph("Opening — <i>Nick Giunchi</i>", styles["h1"]))
     story.append(Paragraph(
         "Live pitch, English, large audience &middot; ~2 min 15 sec &middot; "
@@ -198,7 +198,7 @@ def build():
             script("That magic — those flavours, those Sundays, the "
                    "people we loved — <b>should not be allowed to "
                    "disappear.</b> <b>[PAUSE]</b>"),
-            script("We built <b>Nona</b> — to make sure they don't."),
+            script("We built <b>Nana</b> — to make sure they don't."),
             cue("VOICE", "First half (eyes closed): slow, low volume, "
                 "almost a whisper. The senses sections (warmth, air, "
                 "sound, light) — drop another notch, hypnotic pace."),
@@ -210,7 +210,7 @@ def build():
             cue("BODY", '<i>"Your grandmother turns around"</i> — small '
                 "open-palm gesture at chest height, like greeting "
                 "someone at the end of a hallway."),
-            cue("BODY", 'On <i>"We built Nona — to make sure they '
+            cue("BODY", 'On <i>"We built Nana — to make sure they '
                 "don't.\"</i> — plant feet. Quiet conviction, not "
                 "selling."),
         ],
@@ -222,9 +222,9 @@ def build():
         [
             cue("BODY", "Open posture. Warmth back on."),
             script("Good morning. I am Nicola Giunchi. I am one of the "
-                   "five founders of <b>Nona</b>. <b>[PAUSE]</b>"),
-            script("Nona is not an app. Not a platform. Not a service."),
-            script("Nona is <b>the community cookbook</b>. A home for "
+                   "five founders of <b>Nana</b>. <b>[PAUSE]</b>"),
+            script("Nana is not an app. Not a platform. Not a service."),
+            script("Nana is <b>the community cookbook</b>. A home for "
                    "every grandmother's recipe. A passport for every "
                    "Sunday lunch."),
             script("Our promise is simple. One sentence. &mdash; "
@@ -248,15 +248,15 @@ def build():
                    "A small place. A bottle of wine. — Hugs. — "
                    "<i>&ldquo;How was Christmas?&rdquo;</i>"),
             script("And we started telling stories."),
-            script("Vittoria — her nonna in <b>Le Marche</b>. "
-                   "<i>Vincisgrassi</i> for twenty people."),
-            script("Chiara — her nonna in <b>Piemonte</b>. "
-                   "<i>Agnolotti del plin</i>, all by hand."),
-            script("Alessia — <b>Puglia</b>. <i>Orecchiette</i> and "
-                   "<i>focaccia</i> at sunrise."),
+            script("Vittoria — her nonna in <b>Emilia Romagna</b>. "
+                   "<i>Tortellini</i> until midnight."),
+            script("Chiara — her nonna in <b>Basilicata</b>. "
+                   "<i>Peperoni cruschi</i> and <i>lagane e ceci</i>, all by hand."),
+            script("Alessia — <b>Campania</b>. Her <i>nonno's</i> "
+                   "<i>parmigiana</i> and <i>ragù</i> at sunrise."),
             script("The other Nicola — <b>Lazio</b>. <i>Cacio e pepe</i> "
                    "at midnight."),
-            script("And me — <b>Nonna Teresa, Romagna</b>. "
+            script("And me — <b>Nonna Maura, Marche</b>. "
                    "<i>Cappelletti in brodo</i>. — Christmas Eve, "
                    "until two in the morning."),
             script("Five very different lives. — Five very different "
@@ -270,7 +270,7 @@ def build():
             script("<b>[PAUSE 2 sec]</b>"),
             script("That night, we were not five friends anymore. — "
                    "We were five co-founders."),
-            script("<b>Nona was born that evening. December 26, 2022. — "
+            script("<b>Nana was born that evening. December 26, 2022. — "
                    "Born from five Christmas lunches. — And one shared "
                    "idea: that magic should not have to end.</b>"),
             cue("VOICE", "Slow the five grandmothers way down. One beat "
@@ -282,7 +282,7 @@ def build():
             cue("BODY", 'On <i>"the other Nicola"</i> — small, warm '
                 "smile. (Inside joke. If Nicola Giovannelli is not in "
                 "the room, <b>cut the line.</b>)"),
-            cue("BODY", 'On <i>"Nona was born that evening"</i> — '
+            cue("BODY", 'On <i>"Nana was born that evening"</i> — '
                 "plant feet. Stop moving. Don't gesture. The stillness "
                 "does the work."),
         ],
@@ -456,7 +456,7 @@ def build():
     story.append(Spacer(1, 18))
     story.append(hr(color=MUTED, thickness=0.4))
     story.append(Paragraph(
-        "Nona S.r.l. &middot; Opening pitch (B2/C1 version) &middot; "
+        "Nana S.r.l. &middot; Opening pitch (B2/C1 version) &middot; "
         "Nick Giunchi &middot; rev. 2026-04-26",
         styles["footer"],
     ))

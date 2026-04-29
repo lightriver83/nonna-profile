@@ -1,4 +1,4 @@
-# Nona — Company Profile (Classroom Example)
+# Nana — Company Profile (Classroom Example)
 
 A one-page scrollytelling website that plays the role of a **textbook-correct company profile** for an English-course group project.
 
@@ -52,7 +52,7 @@ Rules covered on-page:
 
 If another group wants to reuse this scaffolding:
 
-1. Open `index.html`. Search-replace `Nona`, `Bologna`, `tortellini`, the founders' names.
+1. Open `index.html`. Search-replace `Nana`, `Bologna`, `tortellini`, the founders' names.
 2. Replace the 7 images in `/images/` with your own (or let the Unsplash fallbacks render).
 3. Edit the 10 debrief cards at the bottom to reflect **your** rule-by-rule choices.
 4. Rewrite `speech-script.md` — keep the structure, change the story.

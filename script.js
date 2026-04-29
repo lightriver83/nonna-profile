@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Nona — scrollytelling interactions
+   Nana — scrollytelling interactions
    GSAP + ScrollTrigger + Lenis (all via CDN)
    ========================================================================== */
 
@@ -250,7 +250,7 @@
           </div>`;
       } else {
         // Page title
-        document.title = recipe.title + ' — Nona';
+        document.title = recipe.title + ' — Nana';
 
         // Header
         const elTitle = document.getElementById('rd-title');
@@ -374,6 +374,12 @@
         resetModal();
         submitModal.showModal();
       });
+
+      // Auto-open from QR code: /recipes.html?submit=1
+      if (new URLSearchParams(window.location.search).get('submit') === '1') {
+        resetModal();
+        submitModal.showModal();
+      }
 
       closeBtns.forEach(btn => btn.addEventListener('click', () => submitModal.close()));
 

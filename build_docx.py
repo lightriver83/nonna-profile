@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Genera Nona_Site_Texts.docx — tutti i testi del sito, divisi per capitoli,
+"""Genera Nana_Site_Texts.docx — tutti i testi del sito, divisi per capitoli,
 pronti per revisione di gruppo. Ogni testo riporta tra parentesi quadre
 l'ID della sezione / elemento, così lo sviluppatore sa dove riportare la modifica nell'HTML."""
 
@@ -7,7 +7,7 @@ from docx import Document
 from docx.shared import Pt, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
 
-OUT = "/Users/nickminimac/Desktop/Claude/Company Profile/nonna-presentation/Nona_Site_Texts.docx"
+OUT = "/Users/nicolagiunchi/Repository/nonna-profile/Nana_Site_Texts.docx"
 
 doc = Document()
 
@@ -65,7 +65,7 @@ def NOTE(text):
 # ========== COPERTINA ==========
 title = doc.add_paragraph()
 title.alignment = WD_ALIGN_PARAGRAPH.CENTER
-r = title.add_run("NONA")
+r = title.add_run("NANA")
 r.bold = True
 r.font.size = Pt(36)
 r.font.color.rgb = RGBColor(0x8B, 0x3A, 0x1F)
@@ -89,7 +89,7 @@ NOTE("Come usare questo documento: ogni capitolo corrisponde a una sezione del s
      "[ID sezione / elemento] serve al team di sviluppo per riportare le modifiche "
      "nell'HTML. I capitoli finali (16 e 17) coprono le due pagine secondarie "
      "(catalogo ricette + dettaglio ricetta).")
-NOTE("Brand: Nona (con una sola N in mezzo). Non confondere con 'Nonna Teresa' "
+NOTE("Brand: Nana (4 lettere, niente doppie). Non confondere con 'Nonna Teresa' "
      "e simili, che sono i nomi delle nonne-persone e restano invariati.")
 NOTE("Ordine delle sezioni nella home: Hero → Story → Mission → Vision → How → "
      "Recipes preview (3 card) → Community → Team → Why Now → Trust → "
@@ -100,12 +100,12 @@ doc.add_page_break()
 # ========== META / SEO ==========
 H1("Capitolo 0 — Meta & SEO (index.html)")
 H3("[head / title]")
-P("Nona — Preserve tradition, one recipe at a time.")
+P("Nana — Preserve tradition, one recipe at a time.")
 H3("[head / meta description]")
-P("Nona is the community cookbook. Record your grandmother's recipes, share them "
+P("Nana is the community cookbook. Record your grandmother's recipes, share them "
   "with the world, cook each other's Sunday lunch.")
 H3("[head / Open Graph title]")
-P("Nona — Preserve tradition, one recipe at a time.")
+P("Nana — Preserve tradition, one recipe at a time.")
 H3("[head / Open Graph description]")
 P("A table set in 47 countries. Five founders, five grandmothers, a thousand recipes to share.")
 
@@ -113,7 +113,7 @@ doc.add_page_break()
 
 # ========== NAVIGAZIONE ==========
 H1("Capitolo 1 — Navigazione (header)")
-H3("[nav / logo]"); P("Nona.")
+H3("[nav / logo]"); P("Nana.")
 H3("[nav / link 1]"); P("Story")
 H3("[nav / link 2]"); P("Mission")
 H3("[nav / link 3]"); P("How")
@@ -136,7 +136,7 @@ NOTE("Nel sito 'tradition' è in corsivo, e il titolo è spezzato su 4 righe ani
      "Preserve / tradition, / one recipe / at a time.")
 
 H3("[hero / meta block]")
-LABEL("Company", "Nona S.r.l.")
+LABEL("Company", "Nana S.r.l.")
 LABEL("Home of", "The community cookbook")
 LABEL("Reach", "5 continents · 47 countries")
 
@@ -172,7 +172,7 @@ P("A recipe that started it all.")
 NOTE("'A recipe' è in corsivo nel sito.")
 
 H3("[story / didascalia foto nonna]")
-P("Nonna Teresa — the woman whose cappelletti notebook started all of this.")
+P("Nonna Maura — the woman whose cappelletti notebook started all of this.")
 
 H3("[story / paragrafo 1 — drop cap]")
 P("One Sunday morning in Romagna, five friends pulled up chairs around the same "
@@ -184,9 +184,9 @@ P("One Sunday morning in Romagna, five friends pulled up chairs around the same 
 H3("[story / paragrafo 2]")
 P("Those five friends — Nicola Giunchi, Vittoria Marcacci, Chiara Ottolini, "
   "Nicola Giovannelli, and Alessia Diodato — became five co-founders that same "
-  "evening. Each one brought their own grandmother: Nonna Teresa from Romagna, "
-  "Nonna Giuseppina from Le Marche, Nonna Amalia from Piemonte, Nonna Luisa "
-  "from Lazio, Nonna Angela from Puglia. Five very different kitchens, one "
+  "evening. Each one brought their own family kitchen: Nonna Maura from the Marche, "
+  "Nonna Paola from Emilia Romagna, Nonna Rosa from Basilicata, Nonna Irlanda "
+  "from Lazio, and Nonno Nello from Campania. Five very different kitchens, one "
   "identical feeling — being somewhere that smelled like belonging.")
 
 H3("[story / paragrafo 3]")
@@ -195,7 +195,7 @@ P("So the five of them built what they wished they'd always had: a simple, "
   "curious enough to cook them, and let her table travel.")
 
 H3("[story / callout finale]")
-P("— Nona was born on a long wooden table in Bologna, on 17 February 2024.")
+P("— Nana was born on a long wooden table in Bologna, on 17 February 2024.")
 
 doc.add_page_break()
 
@@ -233,7 +233,7 @@ NOTE("'Zero complications.' in corsivo.")
 
 H3("[how / lede — testo introduttivo]")
 P("Grandparents don't need another app. They need to be listened to. So we "
-  "designed Nona around the most natural act there is: cooking for someone "
+  "designed Nana around the most natural act there is: cooking for someone "
   "you love — then letting them cook it for someone else.")
 
 H3("[how / step 01 — titolo]"); P("Record")
@@ -352,28 +352,29 @@ H3("[team / eyebrow]")
 P("07 · Our founders")
 
 H3("[team / titolo sezione]")
-P("Five founders. Five grandmothers. One table to share them all.")
+P("Five founders. Five family kitchens. One table to share them all.")
 NOTE("'One table' in corsivo.")
 
 H3("[team / lede]")
-P("From Romagna to Sicily, we grew up in five very different kitchens. The only "
-  "thing we had in common was a nonna who fed us — and a recipe we can't stop "
-  "telling anyone about.")
+P("From the Marche coast to the Campania hills, we grew up in five very different "
+  "kitchens. The only thing we had in common was a grandparent who fed us — and a "
+  "recipe we can't stop telling anyone about.")
 
-NOTE("Titolo provvisorio per tutti i founder: 'Co-founder · CEO' (verrà definito "
-     "meglio più avanti).")
+NOTE("Ruoli founder: CEO Nicola Giunchi · CMO Vittoria · COO Chiara · CFO Nicola "
+     "Giovannelli · CIO Alessia. Alessia ha un *nonno* (Nello), non una nonna: "
+     "il copy della sua card usa esplicitamente 'Nonno Nello'.")
 
 for nome, ruolo, grandma in [
     ("Nicola Giunchi", "Co-founder · CEO",
-     "🍝 Nonna Teresa · Romagna · cappelletti, piadina, sfoglia tirata a mano."),
-    ("Vittoria Marcacci", "Co-founder · CEO",
-     "🫒 Nonna Giuseppina · Le Marche · vincisgrassi, olive all'ascolana."),
-    ("Chiara Ottolini", "Co-founder · CEO",
-     "🍷 Nonna Amalia · Piemonte · agnolotti del plin, bagna càuda."),
-    ("Nicola Giovannelli", "Co-founder · CEO",
-     "🍳 Nonna Luisa · Lazio · carbonara, cacio e pepe, coda alla vaccinara."),
-    ("Alessia Diodato", "Co-founder · CEO",
-     "🥖 Nonna Angela · Puglia · orecchiette, focaccia barese, taralli."),
+     "🍝 Nonna Maura · Marche · cappelletti, vincisgrassi, olive all'ascolana."),
+    ("Vittoria Marcacci", "Co-founder · CMO",
+     "🍅 Nonna Paola · Emilia Romagna · tortellini, ragù della domenica, piadina."),
+    ("Chiara Ottolini", "Co-founder · COO",
+     "🌶️ Nonna Rosa · Basilicata · peperoni cruschi, lagane e ceci, raschatell."),
+    ("Nicola Giovannelli", "Co-founder · CFO",
+     "🍳 Nonna Irlanda · Lazio · carbonara, cacio e pepe, coda alla vaccinara."),
+    ("Alessia Diodato", "Co-founder · CIO",
+     "🍆 Nonno Nello · Campania · parmigiana, ragù napoletano, sfogliatella."),
 ]:
     H3(f"[team / member {nome}]")
     LABEL("Nome", nome)
@@ -383,7 +384,7 @@ for nome, ruolo, grandma in [
 H3("[team / pull quote]")
 P("\"The magic of a grandmother's kitchen isn't in the recipe. It's in the love "
   "she folds into it — the patience, the memory, the small spell that turns "
-  "dinner into belonging. Nona exists to carry that love, one Sunday at a time, "
+  "dinner into belonging. Nana exists to carry that love, one Sunday at a time, "
   "from her table to yours.\"", italic=True)
 P("— The five of us · Bologna, 2024")
 NOTE("'love' e 'belonging' in corsivo nella pull-quote.")
@@ -406,11 +407,11 @@ P("Italian grandmother's hands on a recipe notebook beside a rolling pin and "
 H3("[whynow / paragrafo 1]")
 P("A grandmother's WhatsApp voice note explaining the dough for six minutes. "
   "A sauce-stained post-it on the fridge. A phone call at 6pm — \"how much salt, "
-  "really?\". Families have always found a way. Nona just gave that way a home, "
+  "really?\". Families have always found a way. Nana just gave that way a home, "
   "a table, and a passport.")
 
 H3("[whynow / paragrafo 2]")
-P("We built Nona because technology finally caught up with tenderness — and "
+P("We built Nana because technology finally caught up with tenderness — and "
   "because the warmest thing about a grandmother has always been that she cooks "
   "for people she's never met. Now she can.")
 
@@ -455,7 +456,7 @@ NOTE("Ogni milestone ha un'icona emoji, un'etichetta temporale e un testo. L'ult
      "milestone: l'animazione si attiva all'ingresso nello scroll.")
 LABEL("📓 Dec 2022", "A recipe notebook rediscovered in Romagna.")
 LABEL("🏡 Jun 2023", "First 12 families record recipes across five Italian regions.")
-LABEL("🏛️ Feb 2024", "Nona S.r.l. incorporated in Bologna.")
+LABEL("🏛️ Feb 2024", "Nana S.r.l. incorporated in Bologna.")
 LABEL("💰 Sep 2024", "€1.8M seed round led by United Ventures.")
 LABEL("🌍 Mar 2025", "Launch in 47 countries. 37 000 recipes shared.")
 LABEL("🪑 Today", "You're invited to the table.")
@@ -523,7 +524,7 @@ P("Below — a guided tour of every rule from the course slides and where we "
 SEP()
 
 H2("Rule 1 — Must-have information")
-P("• Company name → Nona S.r.l. · brand: Nona (hero + nav)")
+P("• Company name → Nana S.r.l. · brand: Nana (hero + nav)")
 P("• Physical address → Bologna, Italy (story + footer)")
 P("• Established date → 17 February 2024 (timeline)")
 P("• Contact info → CTA + footer")
@@ -540,7 +541,7 @@ P("We deliberately avoided weak verbs (make, do, help). We used:")
 P("Record · Upload · Share · Taste · Match · Meet · Reward · Travel")
 
 H2("Rule 4 — Impressive nouns")
-P("We never call Nona \"a service\" or \"a platform.\" We use identity nouns: "
+P("We never call Nana \"a service\" or \"a platform.\" We use identity nouns: "
   "the community cookbook, a table that travels, a passport for Sunday lunch.")
 
 H2("Rule 5 — Comparatives & superlatives")
@@ -585,14 +586,14 @@ doc.add_page_break()
 # ========== FOOTER ==========
 H1("Capitolo 16 — Footer")
 
-H3("[footer / logo]"); P("Nona.")
+H3("[footer / logo]"); P("Nana.")
 
 H3("[footer / indirizzo]")
 P("Via San Vitale 47")
 P("40125 Bologna, Italy")
 
 H3("[footer / contatti]")
-P("hello@nona.kitchen")
+P("hello@nana.kitchen")
 P("+39 051 000 000")
 
 H3("[footer / crediti]")
@@ -605,7 +606,7 @@ LABEL("Label", "Reading list")
 P("Starbucks · Tesla · Bloomberg · Patagonia · Airbnb")
 
 H3("[footer / bottom bar]")
-P("© 2026 Nona S.r.l. — Fictional example for classroom use.")
+P("© 2026 Nana S.r.l. — Fictional example for classroom use.")
 P("Designed to make you feel at home.")
 
 doc.add_page_break()
@@ -806,7 +807,7 @@ doc.add_page_break()
 
 # ========== CHIUSURA ==========
 NOTE("Fine del documento. Totale capitoli: 19 (da 0 a 18).")
-NOTE("File sorgente: /Users/nickminimac/Desktop/Claude/Company Profile/nonna-presentation/")
+NOTE("File sorgente: /Users/nicolagiunchi/Repository/nonna-profile/")
 NOTE("Pagine sito: index.html · recipes.html · recipe.html")
 
 doc.save(OUT)
