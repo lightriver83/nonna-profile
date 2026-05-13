@@ -106,7 +106,7 @@ body::after {
 .big-type {
   font-family: var(--ff-display);
   font-weight: 300;
-  font-size: clamp(50px, 8.5vw, 148px);
+  font-size: clamp(64px, 8.5vw, 148px);
   line-height: .94;
   letter-spacing: -0.028em;
   font-variation-settings: "SOFT" 90, "WONK" 1, "opsz" 144;
@@ -287,7 +287,7 @@ body::after {
 }
 .meta__value {
   font-family: var(--ff-display);
-  font-size: clamp(15px, 1.2vw, 19px);
+  font-size: clamp(18px, 1.4vw, 22px);
   font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 30;
 }
 .hero__scroll {
@@ -305,28 +305,89 @@ body::after {
   .hero__meta { grid-template-columns: 1fr; gap: 14px; padding-top: 18px; }
 }
 
-/* ---------- Marquee ---------- */
+/* ---------- Press marquee (partners + press wordmarks) ---------- */
 .marquee {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
   overflow: hidden;
-  padding: 22px 0;
+  padding: clamp(22px, 2.4vw, 36px) 0;
   background: var(--cream-deep);
 }
 .marquee__track {
-  display: flex; gap: 36px;
+  display: flex;
+  align-items: center;
+  gap: clamp(40px, 4vw, 72px);
   white-space: nowrap;
-  font-family: var(--ff-display);
-  font-weight: 300;
-  font-size: clamp(20px, 2.2vw, 34px);
-  font-style: italic;
-  color: var(--ink-soft);
-  animation: marquee 38s linear infinite;
-  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+  animation: marquee 60s linear infinite;
+  will-change: transform;
 }
-.marquee__track span { flex-shrink: 0; }
+.marquee__track > span { flex-shrink: 0; }
 @keyframes marquee {
   to { transform: translateX(-50%); }
+}
+
+.brand {
+  font-size: clamp(22px, 2.4vw, 38px);
+  line-height: 1;
+  color: var(--ink);
+}
+.brand__dot {
+  font-size: clamp(22px, 2.4vw, 38px);
+  color: var(--terracotta-2);
+  opacity: 0.5;
+}
+
+/* per-brand wordmark styling — each one evokes the brand's typographic identity */
+.brand--slowfood {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--terracotta-2);
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+}
+.brand--unesco {
+  font-family: var(--ff-body);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: clamp(20px, 2.1vw, 32px);
+}
+.brand--ft {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-style: italic;
+  color: #a8635a;
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 144;
+}
+.brand--monocle {
+  font-family: var(--ff-body);
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  font-size: clamp(20px, 2.1vw, 32px);
+}
+.brand--uv {
+  font-family: var(--ff-body);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+.brand--repubblica {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-style: italic;
+  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 144;
+}
+.brand--kinfolk {
+  font-family: var(--ff-body);
+  font-weight: 300;
+  letter-spacing: 0.32em;
+  font-size: clamp(20px, 2.1vw, 32px);
+}
+.brand--gambero {
+  font-family: var(--ff-display);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--terracotta);
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
 }
 
 /* ---------- Story ---------- */
@@ -582,8 +643,8 @@ body::after {
   margin: 36px auto 0;
   font-family: var(--ff-accent);
   font-style: italic;
-  font-size: clamp(18px, 1.3vw, 22px);
-  color: var(--ink-soft);
+  font-size: clamp(20px, 1.5vw, 26px);
+  color: var(--ink-2);
 }
 
 /* ---------- How it works ---------- */
@@ -721,15 +782,15 @@ body::after {
 .member h3 {
   font-family: var(--ff-display);
   font-weight: 400;
-  font-size: clamp(22px, 1.8vw, 28px);
+  font-size: clamp(26px, 2.2vw, 32px);
   line-height: 1.15;
   font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
 }
 .member__role {
   font-family: var(--ff-accent);
   font-style: italic;
-  color: var(--terracotta-2);
-  font-size: 15px;
+  color: var(--ink-soft);
+  font-size: 17px;
   margin: 4px 0 6px !important;
 }
 .member__email {
@@ -868,130 +929,6 @@ body::after {
 .cta__button:hover { background: var(--terracotta-2); transform: translateY(-2px); }
 .cta__button svg { width: 32px; height: 12px; }
 
-/* ==========================================================================
-   DEBRIEF — classroom section (inverted theme)
-   ========================================================================== */
-.debrief {
-  background: var(--ink);
-  color: var(--paper);
-  padding: clamp(100px, 12vw, 180px) var(--pad);
-  border-top: 1px solid rgba(243,234,218,.08);
-}
-.debrief__intro {
-  max-width: 80ch;
-  margin-bottom: 80px;
-}
-.debrief__intro .section-title { margin-top: 18px; }
-.debrief__lede {
-  margin-top: 28px;
-  font-family: var(--ff-accent);
-  font-style: italic;
-  font-size: clamp(18px, 1.4vw, 22px);
-  line-height: 1.5;
-  color: rgba(243,234,218,.7);
-  max-width: 60ch;
-}
-
-.debrief__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  max-width: var(--max);
-  margin: 0 auto;
-}
-
-.rule {
-  padding: 36px 32px;
-  background: rgba(243,234,218,.03);
-  border: 1px solid rgba(243,234,218,.1);
-  border-radius: var(--radius);
-  transition: background .3s var(--ease-out), border-color .3s var(--ease-out);
-}
-.rule:hover {
-  background: rgba(200,107,60,.06);
-  border-color: rgba(200,107,60,.35);
-}
-.rule header { margin-bottom: 20px; }
-.rule__tag {
-  display: inline-block;
-  font-family: var(--ff-body);
-  font-size: 10px;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--ochre);
-  margin-bottom: 14px;
-  padding: 4px 10px;
-  border: 1px solid rgba(217,164,65,.4);
-  border-radius: 999px;
-}
-.rule h3 {
-  font-family: var(--ff-display);
-  font-weight: 400;
-  font-size: clamp(22px, 2vw, 28px);
-  line-height: 1.15;
-  color: var(--paper);
-  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
-}
-.rule p {
-  font-family: var(--ff-body);
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(243,234,218,.78);
-  margin-bottom: 12px;
-}
-.rule strong { color: var(--paper); font-weight: 600; }
-.rule em { color: var(--ochre); font-style: italic; }
-.rule__check li {
-  padding: 8px 0;
-  border-bottom: 1px dashed rgba(243,234,218,.12);
-  font-size: 14px;
-  color: rgba(243,234,218,.78);
-  line-height: 1.5;
-}
-.rule__check li:last-child { border-bottom: 0; }
-.rule__note {
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid rgba(243,234,218,.1);
-  font-size: 13px !important;
-  font-style: italic;
-  color: rgba(243,234,218,.55) !important;
-}
-.chipline {
-  display: flex; flex-wrap: wrap; gap: 8px;
-  margin-top: 14px;
-}
-.chipline span {
-  padding: 8px 14px;
-  border: 1px solid rgba(200,107,60,.5);
-  border-radius: 999px;
-  font-family: var(--ff-display);
-  font-size: 14px;
-  color: var(--paper);
-  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 30;
-}
-.seven { counter-reset: n; }
-.seven li {
-  padding: 10px 0 10px 40px;
-  position: relative;
-  border-bottom: 1px dashed rgba(243,234,218,.12);
-  font-size: 14px;
-  color: rgba(243,234,218,.78);
-  line-height: 1.5;
-  counter-increment: n;
-}
-.seven li:last-child { border-bottom: 0; }
-.seven li::before {
-  content: counter(n);
-  position: absolute;
-  left: 0; top: 10px;
-  font-family: var(--ff-display);
-  font-style: italic;
-  color: var(--ochre);
-  font-size: 18px;
-  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 30;
-}
-
 /* ---------- Footer ---------- */
 .foot {
   background: var(--ink-2);
@@ -1105,7 +1042,7 @@ body::after {
 }
 .chart__donut-num {
   font-family: var(--ff-display);
-  font-size: 22px;
+  font-size: 32px;
   font-weight: 400;
   fill: var(--ink);
   font-variation-settings: "SOFT" 90, "WONK" 1, "opsz" 144;
