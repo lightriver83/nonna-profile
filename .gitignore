@@ -31,3 +31,6 @@ build/
 # Python venv (local, used to rebuild docx/pdf)
 .venv/
 __pycache__/
+
+# Local timestamped backup folders (created before risky edits)
+_backup_*/
