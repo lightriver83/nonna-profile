@@ -4,6 +4,8 @@ A one-page scrollytelling website that plays the role of a **textbook-correct co
 
 The "company" is fictional. Everything on the page is designed to be a concrete, teachable example of the rules covered in `2026-04-13_Company_Profile_Complete.md` (Part 1: Company Profile, Part 2: Mission & Vision, Part 3: Public Speaking).
 
+**Live:** [nanakitchen.it](https://nanakitchen.it/) · [www.nanakitchen.it](https://www.nanakitchen.it/) · backup canonical [nonna-profile.pages.dev](https://nonna-profile.pages.dev/)
+
 ---
 
 ## What's inside
