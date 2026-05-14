@@ -123,33 +123,9 @@
       });
     });
 
-    /* --- Counter animation --- */
-    document.querySelectorAll('.stat__num').forEach((el) => {
-      const target = parseFloat(el.dataset.count) || 0;
-      const suffix = el.querySelector('span');
-      const suffixHTML = suffix ? suffix.outerHTML : '';
-      const obj = { v: 0 };
-      ScrollTrigger.create({
-        trigger: el,
-        start: 'top 85%',
-        once: true,
-        onEnter: () => {
-          gsap.to(obj, {
-            v: target,
-            duration: 2.2,
-            ease: 'power3.out',
-            onUpdate: () => {
-              const n = Math.round(obj.v).toLocaleString('en-US');
-              el.innerHTML = n + suffixHTML;
-            },
-          });
-        },
-      });
-    });
-
     /* --- Generic scroll reveals (sections / cards) --- */
     if (!prefersReduced) {
-      gsap.utils.toArray('.section-head, .story__grid, .step, .stat, .member, .rule, .trust__logos span, .pull-quote, .cta__title, .cta__sub, .cta__button, .whynow__text > *, .recipe-card, .community__block, .chart').forEach((el) => {
+      gsap.utils.toArray('.section-head, .story__grid, .step, .member, .cta__title, .cta__sub, .cta__button, .whynow__text > *, .recipe-card, .community__block, .chart').forEach((el) => {
         gsap.from(el, {
           opacity: 0,
           y: 28,
