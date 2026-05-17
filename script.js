@@ -28,33 +28,70 @@
     whenReady(init);
   });
 
-  /* --- Stage splash (pitch mode): Ctrl/Cmd+Shift+P to activate; scroll/click/any key to dismiss --- */
+  /* --- Stage splash (pitch mode). Activate: Cmd/Ctrl+Shift+P, type "nana", or #stage hash. Dismiss: scroll/click/any key. --- */
   (function stageSplash() {
     const el = document.querySelector('.stage-splash');
-    if (!el) return;
+    if (!el) { console.warn('[stage-splash] element not found'); return; }
     const isActive = () => el.classList.contains('is-active');
+    let activatedAt = 0;
+    const inGracePeriod = () => Date.now() - activatedAt < 500;
+
     function activate() {
       if (isActive()) return;
+      activatedAt = Date.now();
       el.classList.add('is-active');
       document.body.style.overflow = 'hidden';
+      console.log('[stage-splash] activated');
     }
     function dismiss() {
       if (!isActive()) return;
       el.classList.remove('is-active');
       document.body.style.overflow = '';
+      console.log('[stage-splash] dismissed');
     }
+
+    let buffer = '';
+    let bufferTimer = null;
+    const MODIFIER_KEYS = new Set(['Shift', 'Meta', 'Control', 'Alt', 'CapsLock']);
+
     window.addEventListener('keydown', (e) => {
-      const mod = e.ctrlKey || e.metaKey;
-      if (mod && e.shiftKey && (e.key === 'P' || e.key === 'p')) {
+      const ae = document.activeElement;
+      if (ae && /^(INPUT|TEXTAREA|SELECT)$/i.test(ae.tagName)) return;
+
+      // Activation 1: Cmd/Ctrl+Shift+P (e.code is layout-independent)
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.code === 'KeyP') {
         e.preventDefault();
         activate();
         return;
       }
-      if (isActive()) dismiss();
+
+      // While active: any non-modifier key dismisses (after grace period)
+      if (isActive()) {
+        if (inGracePeriod()) return;
+        if (!MODIFIER_KEYS.has(e.key)) dismiss();
+        return;
+      }
+
+      // Activation 2: type sequence "nana" (no modifiers, single char keys)
+      if (e.ctrlKey || e.metaKey || e.altKey) return;
+      if (e.key.length !== 1) return;
+      buffer = (buffer + e.key.toLowerCase()).slice(-4);
+      if (buffer === 'nana') {
+        activate();
+        buffer = '';
+      }
+      clearTimeout(bufferTimer);
+      bufferTimer = setTimeout(() => { buffer = ''; }, 1500);
     });
-    window.addEventListener('wheel',      () => { if (isActive()) dismiss(); }, { passive: true });
-    window.addEventListener('click',      () => { if (isActive()) dismiss(); });
-    window.addEventListener('touchstart', () => { if (isActive()) dismiss(); }, { passive: true });
+
+    window.addEventListener('wheel',      () => { if (isActive() && !inGracePeriod()) dismiss(); }, { passive: true });
+    window.addEventListener('click',      () => { if (isActive() && !inGracePeriod()) dismiss(); });
+    window.addEventListener('touchstart', () => { if (isActive() && !inGracePeriod()) dismiss(); }, { passive: true });
+
+    // Activation 3: URL hash #stage
+    if (window.location.hash === '#stage') activate();
+
+    console.log('[stage-splash] ready. Activate: Cmd/Ctrl+Shift+P · type "nana" · or visit #stage');
   })();
 
   function init() {
