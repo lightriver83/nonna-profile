@@ -28,6 +28,35 @@
     whenReady(init);
   });
 
+  /* --- Stage splash (pitch mode): Ctrl/Cmd+Shift+P to activate; scroll/click/any key to dismiss --- */
+  (function stageSplash() {
+    const el = document.querySelector('.stage-splash');
+    if (!el) return;
+    const isActive = () => el.classList.contains('is-active');
+    function activate() {
+      if (isActive()) return;
+      el.classList.add('is-active');
+      document.body.style.overflow = 'hidden';
+    }
+    function dismiss() {
+      if (!isActive()) return;
+      el.classList.remove('is-active');
+      document.body.style.overflow = '';
+    }
+    window.addEventListener('keydown', (e) => {
+      const mod = e.ctrlKey || e.metaKey;
+      if (mod && e.shiftKey && (e.key === 'P' || e.key === 'p')) {
+        e.preventDefault();
+        activate();
+        return;
+      }
+      if (isActive()) dismiss();
+    });
+    window.addEventListener('wheel',      () => { if (isActive()) dismiss(); }, { passive: true });
+    window.addEventListener('click',      () => { if (isActive()) dismiss(); });
+    window.addEventListener('touchstart', () => { if (isActive()) dismiss(); }, { passive: true });
+  })();
+
   function init() {
     gsap.registerPlugin(ScrollTrigger);
 
